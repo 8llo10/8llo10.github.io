@@ -1,8 +1,0 @@
-You do NOT need to put project images here if you use the Admin dashboard uploader.
-
-The public site intentionally shows labeled placeholders until you add your own photos.
-Recommended image plan:
-1. HERO PHOTO: portrait/editorial cutout, 4:5, preferably PNG/JPG around 1600px tall.
-2. ABOUT PHOTO: candid workspace / professional lifestyle photo, 4:3.
-3. PROJECT COVERS: clean screenshot or mockup for each project, 16:10.
-4. CV: put Ghala_AlHashmi_Alameer_CV.pdf directly inside /public.
