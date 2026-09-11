@@ -1,0 +1,14 @@
+Upload project images to this folder using these exact names:
+
+tnabbah.jpg
+madad.jpg
+switchboard.jpg
+hiremail.jpg
+proof.jpg
+
+Final paths:
+/public/projects/tnabbah.jpg
+/public/projects/madad.jpg
+/public/projects/switchboard.jpg
+/public/projects/hiremail.jpg
+/public/projects/proof.jpg
