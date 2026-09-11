@@ -6,8 +6,8 @@ import { ArrowDownRight, ArrowUpRight, Database, Github, Linkedin, Mail, MapPin,
 import { Project, supabase } from '../lib/supabase';
 
 const fallback: Project[] = [
-  {id:'tnabbah',title:'TNABBAH',subtitle:'Smart Vehicle Diagnostics',description:'Real-vehicle diagnostics with BLE OBD-II, live ECU telemetry, DTC analysis, maintenance workflows, multi-vehicle context and backend diagnostic services.',tags:['React Native','FastAPI','MQTT','PostgreSQL','BLE'],image_url:'/projects/tnabbah.jpg',featured:true,sort_order:1},
-  {id:'madad',title:'MADAD',subtitle:'Field Operations Orchestration',description:'Operational command system for incidents, teams, resources and SLA-aware dispatch ranking with a real backend, database and realtime workflows.',tags:['Next.js','Express','Prisma','PostgreSQL','Realtime'],image_url:'/projects/madad.jpg',featured:true,sort_order:2},
+  {id:'tnabbah',title:'TNABBAH',subtitle:'Smart Vehicle Diagnostics',description:'Real-vehicle diagnostics with BLE OBD-II, live ECU telemetry, DTC analysis, maintenance workflows, multi-vehicle context and backend diagnostic services.',tags:['React Native','FastAPI','MQTT','PostgreSQL','BLE'],image_url:'/projects/tnabbah.jpg',live_url:'https://tnabbah.vercel.app/',featured:true,sort_order:1},
+  {id:'madad',title:'MADAD',subtitle:'Field Resource & Operations Orchestration Platform — Independent Project',description:'Developing an enterprise platform for coordinating incidents, field teams, equipment, spare parts, and operational resources across large-scale field operations. Built an optimization-based dispatch engine, resource allocation, incident lifecycle management, RBAC, real-time tracking, SLA monitoring, resource rebalancing, and operational simulation.',tags:['Next.js','Express','Prisma','PostgreSQL','Realtime'],image_url:'/projects/madad.jpg',live_url:'https://madad-hajj-field-resource-operation.vercel.app',featured:true,sort_order:2},
   {id:'switchboard',title:'SWITCHBOARD',subtitle:'Visual IT Automation Builder',description:'Drag-and-drop IT workflows backed by an execution-engine architecture for HTTP, databases, PowerShell, SSH, approvals, conditions and scheduled triggers.',tags:['Next.js','Node.js','Docker','Automation'],image_url:'/projects/switchboard.jpg',featured:true,sort_order:3},
   {id:'hiremail',title:'HireMail AI',subtitle:'Intelligent Career Email Classification & Opportunity Tracking',description:'Gmail-integrated platform that classifies professional emails and organizes interviews, offers, assessments and career opportunities in one dashboard.',tags:['Next.js','Gmail API','OAuth','PostgreSQL'],image_url:'/projects/hiremail.jpg',live_url:'https://hiremail-ai-v2-omega.vercel.app',sort_order:4},
   {id:'proof',title:'PROOF',subtitle:'Decision Evidence Registry · سجل إثبات القرارات',description:'A verifiable decision-evidence platform for property and contractor workflows, turning approvals and important decisions into traceable records with parties, evidence and status.',tags:['Full-Stack','Workflow','Audit Trail','Decision Records'],image_url:'/projects/proof.jpg',live_url:'https://proof-verifiable-decision-platform.vercel.app/',sort_order:5},
@@ -15,6 +15,7 @@ const fallback: Project[] = [
 
 const stack=['TypeScript','JavaScript','Python','React','Next.js','React Native','Node.js','Express','FastAPI','REST APIs','PostgreSQL','Supabase','Prisma','Docker','MQTT','OAuth','GitHub','Vercel'];
 const commandCenter='https://project-command-center-l6qiq2x08-ghala-alameer-s-projects.vercel.app/admin';
+const technicalServices='https://emspsaa.com/';
 
 function ProjectVisual({project}:{project:Project}){
   const [failed,setFailed]=useState(false);
@@ -71,13 +72,12 @@ export default function Home(){
 
     <section id="top" className="hero">
       <div className="dotField"/><div className="orb orb1"/><div className="orb orb2"/>
-      <div className="topline"><span>SOFTWARE ENGINEER · FULL-STACK · BACKEND</span><span>PORTFOLIO / 2026</span></div>
+      <div className="topline"><span>SOFTWARE ENGINEER · FULL-STACK · BACKEND</span><span>SELECTED WORK · SAUDI ARABIA</span></div>
       <motion.div className="heroTitle" initial={{opacity:0,y:45}} animate={{opacity:1,y:0}} transition={{duration:.8}}><span>PORT</span><span>FOLIO</span></motion.div>
       <div className="heroCollage">
-        <motion.div className="introCard stickerCard" initial={{rotate:-3,opacity:0}} animate={{rotate:-2,opacity:1}}><span className="tape tapeA"/><p className="eyebrow">HELLO, I&apos;M</p><h1>GHALA<br/><i>AL-HASHMI</i></h1><p className="introText">I build full-stack products with real backend logic, databases, integrations, authentication and deployment — not interface-only demos.</p><div className="scribble">build → test → ship ✦</div></motion.div>
-        <motion.div className="portraitFrame" initial={{scale:.92,opacity:0}} animate={{scale:1,opacity:1}}><PortraitVisual/><div className="photoTag">SOFTWARE ENGINEER</div></motion.div>
-        <div className="miniCard"><Sparkles size={18}/><b>BACKEND × FULL-STACK</b><small>REAL SYSTEMS · REAL DEPLOYMENTS</small></div>
-        <div className="yearBadge"><span>EST.</span><strong>2026</strong><span>SAUDI ARABIA</span></div>
+        <motion.div className="introCard stickerCard" initial={{rotate:-3,opacity:0}} animate={{rotate:-1,opacity:1}}><span className="tape tapeA"/><p className="eyebrow">HELLO, I&apos;M</p><h1>GHALA<br/><i>AL-HASHMI</i></h1><p className="introText">I build full-stack products with real backend logic, databases, integrations, authentication and deployment — not interface-only demos.</p><div className="scribble">build → test → ship ✦</div></motion.div>
+        <motion.div className="portraitFrame" initial={{scale:.96,opacity:0}} animate={{scale:1,opacity:1}}><PortraitVisual/><div className="photoTag">SOFTWARE ENGINEER</div></motion.div>
+        <div className="heroSide"><div className="miniCard"><Sparkles size={18}/><b>BACKEND × FULL-STACK</b><small>REAL SYSTEMS · REAL DEPLOYMENTS</small></div><div className="yearBadge"><span>EST.</span><strong>2025</strong><span>SAUDI ARABIA</span></div></div>
         <div className="scrollHint"><ArrowDownRight/> SCROLL TO EXPLORE</div>
       </div>
     </section>
@@ -100,20 +100,17 @@ export default function Home(){
 
     <section id="proof" className="experienceSection paperTexture">
       <span className="sectionStamp">03 / ENGINEERING PROOF</span>
-      <div className="experienceGrid">
-        <div className="experienceMain"><h2>BEYOND<br/><i>THE UI.</i></h2><div className="timeline"><span className="line"/>
-          <div className="timelineItem"><b>BACKEND ENGINEERING</b><small>FastAPI · Express · REST · Auth · OAuth</small><p>Designed server-side services for authentication, user flows, vehicle diagnostics, operational dispatch, Gmail ingestion and project workflows — including permission-aware logic and external integrations.</p></div>
-          <div className="timelineItem proofItem"><b>DATA & SYSTEM DESIGN</b><small>PostgreSQL · Supabase · Prisma · SQL · RLS</small><p>Built relational schemas, ERDs, migrations, row-level security, repository/data-access layers and domain models that support actual system behavior rather than static screens.</p></div>
-          <div className="timelineItem proofItem"><b>REALTIME + CONNECTED SYSTEMS</b><small>MQTT · BLE OBD-II · Realtime · Webhooks</small><p>Worked with live telemetry, hardware-connected vehicle data, event-driven updates and multi-service communication — proving full-stack work beyond CRUD dashboards.</p></div>
-          <div className="timelineItem proofItem"><b>SHIP & OPERATE</b><small>Docker · VPS · Vercel · Render · GitHub</small><p>Integrated, tested and deployed systems end-to-end. The live projects in Our Hub are direct proof that the work reaches production, not just local prototypes.</p></div>
-        </div></div>
-        <div className="toolPoster"><span className="tape tapeB"/><p className="eyebrow">SYSTEM LAYERS I WORK ACROSS</p><div className="proofIcons"><ServerCog/><Database/><Workflow/></div><div className="toolCloud">{stack.map(s=><span key={s}>{s}</span>)}</div><div className="tinyNote">frontend is the surface. the system is underneath.</div></div>
-      </div>
+      <div className="experienceGrid"><div className="experienceMain"><h2>BEYOND<br/><i>THE UI.</i></h2><div className="timeline"><span className="line"/>
+        <div className="timelineItem"><b>BACKEND ENGINEERING</b><small>FastAPI · Express · REST · Auth · OAuth</small><p>Designed server-side services for authentication, user flows, vehicle diagnostics, operational dispatch, Gmail ingestion and project workflows — including permission-aware logic and external integrations.</p></div>
+        <div className="timelineItem proofItem"><b>DATA & SYSTEM DESIGN</b><small>PostgreSQL · Supabase · Prisma · SQL · RLS</small><p>Built relational schemas, ERDs, migrations, row-level security, repository/data-access layers and domain models that support actual system behavior rather than static screens.</p></div>
+        <div className="timelineItem proofItem"><b>REALTIME + CONNECTED SYSTEMS</b><small>MQTT · BLE OBD-II · Realtime · Webhooks</small><p>Worked with live telemetry, hardware-connected vehicle data, event-driven updates and multi-service communication — proving full-stack work beyond CRUD dashboards.</p></div>
+        <div className="timelineItem proofItem"><b>SHIP & OPERATE</b><small>Docker · VPS · Vercel · Render · GitHub</small><p>Integrated, tested and deployed systems end-to-end. The live projects in Our Hub are direct proof that the work reaches production, not just local prototypes.</p></div>
+      </div></div><div className="toolPoster"><span className="tape tapeB"/><p className="eyebrow">SYSTEM LAYERS I WORK ACROSS</p><div className="proofIcons"><ServerCog/><Database/><Workflow/></div><div className="toolCloud">{stack.map(s=><span key={s}>{s}</span>)}</div><div className="tinyNote">frontend is the surface. the system is underneath.</div></div></div>
     </section>
 
     <section id="experience" className="experienceSection paperTexture">
       <span className="sectionStamp">04 / EXPERIENCE</span>
-      <div className="experienceGrid"><div className="experienceMain"><h2>WORK THAT<br/><i>LEFT A MARK.</i></h2><div className="timeline"><span className="line"/><div className="timelineItem"><b>PRINCE SULTAN AVIATION ACADEMY</b><small>Maintenance & Simulators · Software Engineering Trainee</small><p>Digitized paper-heavy maintenance workflows, migrated legacy Microsoft Access data into Power Apps + Dataverse, automated operational calculations and delivered a unified interface deployed to the official server.</p></div></div></div><div className="toolPoster"><span className="tape tapeB"/><p className="eyebrow">CURRENT BUILD SPACE</p><h3>PROJECT<br/>COMMAND CENTER</h3><p>Follow the systems currently being built and their progress from one place.</p><a className="progressLink dark" href={commandCenter} target="_blank">VIEW OUR PROGRESS <ArrowUpRight size={15}/></a></div></div>
+      <div className="experienceGrid"><div className="experienceMain"><h2>WORK THAT<br/><i>LEFT A MARK.</i></h2><div className="timeline"><span className="line"/><div className="timelineItem"><b>PRINCE SULTAN AVIATION ACADEMY</b><small>Maintenance & Simulators · Software Engineering Trainee</small><p>Digitized paper-heavy maintenance workflows, migrated legacy Microsoft Access data into Power Apps + Dataverse, automated operational calculations and delivered a unified interface deployed to the official server.</p><a className="progressLink dark" href={technicalServices} target="_blank">TSV TECHNICAL SERVICES DEPARTMENT <ArrowUpRight size={15}/></a></div></div></div><div className="toolPoster"><span className="tape tapeB"/><p className="eyebrow">CURRENT BUILD SPACE</p><h3>PROJECT<br/>COMMAND CENTER</h3><p>Follow the systems currently being built and their progress from one place.</p><a className="progressLink dark" href={commandCenter} target="_blank">VIEW OUR PROGRESS <ArrowUpRight size={15}/></a></div></div>
     </section>
 
     <footer id="contact"><div className="footerStar">✦</div><div><p className="script">Have something worth building?</p><h2>LET&apos;S MAKE<br/>IT REAL.</h2></div><div className="footerLinks"><a href="mailto:ghalaalameer8@gmail.com"><Mail/>ghalaalameer8@gmail.com</a><a href="tel:+966560602239"><Phone/>+966 56 060 2239</a><a href="https://github.com/8llo10" target="_blank"><Github/>github.com/8llo10</a><a href="https://www.linkedin.com/in/ghala-abdullah-alameer-541733373" target="_blank"><Linkedin/>LINKEDIN</a><span><MapPin/>MAKKAH · JEDDAH</span></div></footer>
