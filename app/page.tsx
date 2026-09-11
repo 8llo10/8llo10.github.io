@@ -14,7 +14,7 @@ const fallback: Project[] = [
 ];
 
 const stack=['TypeScript','JavaScript','Python','React','Next.js','React Native','Node.js','Express','FastAPI','REST APIs','PostgreSQL','Supabase','Prisma','Docker','MQTT','OAuth','GitHub','Vercel'];
-const commandCenter='https://project-command-center-l6qiq2x08-ghala-alameer-s-projects.vercel.app/admin';
+const commandCenter='https://project-command-center-l6qiq2x08-ghala-alameer-s-projects.vercel.app';
 const technicalServices='https://emspsaa.com/';
 
 function ProjectVisual({project}:{project:Project}){
