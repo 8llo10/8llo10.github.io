@@ -1,0 +1,8 @@
+Upload the latest CV PDF to the public folder with this exact filename:
+
+Ghala-Al-Hashmi-Al-Ameer-CV-2026.pdf
+
+The portfolio Resume section is already linked to:
+/Ghala-Al-Hashmi-Al-Ameer-CV-2026.pdf
+
+Replace this PDF whenever the CV is updated. The page currently labels it as: Latest version · Updated 2026.
