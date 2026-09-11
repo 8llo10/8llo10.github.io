@@ -1,55 +1,47 @@
-/* Formal editorial pass — reduce playful/scrapbook cues, keep the existing structure */
+/* Formal editorial pass — restrained, information-led, no playful graduation cues */
 .hero .orb{display:none}
-.topline span:last-child{font-size:0}
-.topline span:last-child::after{content:'BACKEND · FULL-STACK · SYSTEMS';font-size:8px;letter-spacing:.17em}
-.introText{font-size:0}
-.introText::after{content:'Software Engineer focused on backend systems, APIs, databases, integrations and full-stack product development.';font-size:12px;line-height:1.65;color:#523a36}
-.yearBadge{display:none!important}
-.heroSide{align-content:center;justify-items:stretch}
-.miniCard{max-width:210px;background:transparent;border:1px solid var(--ink);box-shadow:none;transform:none;padding:14px 15px}
-.miniCard b{font:600 9px 'DM Mono';letter-spacing:.15em}.miniCard small{font-size:7.5px;letter-spacing:.08em}
+.topline span:last-child{font-size:8px;letter-spacing:.17em}
+.introText{font-size:12px;line-height:1.65;color:#523a36}
+.yearBadge,.heroSide,.photoTag{display:none!important}
 .stickerCard{box-shadow:none;background:#f8f0e3}.introCard{transform:none!important}.tapeA{display:none}
-.photoTag{right:0;bottom:0;transform:none;background:var(--ink);color:var(--cream);border:0;box-shadow:none}
 .heroTitle{letter-spacing:-.04em}
+.heroCollageClean{grid-template-columns:minmax(250px,.78fr) minmax(430px,1.42fr);gap:42px;align-items:stretch;max-width:1080px}
+.heroCollageClean .introCard{align-self:center}
+.heroCollageClean .techFrame{min-width:0}
 
-/* Technical hero artwork: architectural, restrained, no glossy/cute cards */
-.techFrame{transform:none!important}
-.techArt{height:360px!important;clip-path:none!important;background:#321714!important;border:1px solid #321714!important;color:#f7ecd8!important;box-shadow:none!important}
-.techGrid{background-image:linear-gradient(#f7ecd814 1px,transparent 1px),linear-gradient(90deg,#f7ecd814 1px,transparent 1px)!important;background-size:32px 32px!important;mask-image:none!important;opacity:.8}
-.terminal{left:5%!important;top:6%!important;width:57%!important;padding:14px!important;background:#20100f!important;border:1px solid #8f625b!important;box-shadow:none!important;transform:none!important;gap:8px!important}
-.terminalTop{border-bottom:1px solid #68423d!important;height:14px!important}.terminalTop i{width:4px!important;height:4px!important;border-radius:0!important;background:#9b6b63!important;border:0!important;margin-right:6px!important}
-.terminal code{font-size:7.5px!important;color:#e9d8c6!important}.terminal code span{color:#d29a8f!important}
-.systemMap{inset:45% 5% 8%!important;border-top:1px solid #68423d;border-bottom:1px solid #68423d}
-.node{background:#321714!important;color:#f3e5d4!important;border:1px solid #a16c63!important;box-shadow:none!important;border-radius:0!important;padding:7px 9px!important;font-size:7px!important;letter-spacing:.13em!important}
-.node.db{gap:6px!important}.flowLine{background:#b78178!important;opacity:.9}.pulse{width:6px!important;height:6px!important;border-radius:0!important;background:#f3ce70!important;box-shadow:none!important;animation:formalPulse 2.6s linear infinite!important}
-.techLabel{right:4%!important;top:6%!important;font-size:6.5px!important;letter-spacing:.24em!important;color:#d6b4a9!important}
-@keyframes formalPulse{0%,100%{opacity:.25;transform:scale(.75)}50%{opacity:1;transform:scale(1)}}
+.logoMark{width:48px;height:38px;display:grid;place-items:center;overflow:hidden}.brandLogo{width:48px;height:38px;object-fit:contain;object-position:left center}
 
-/* Remove playful stationery cues across the rest of the page */
-.sectionStamp{border-radius:0!important}
-.aboutPoster{box-shadow:none!important}.quoteBox{transform:none!important}
-.projectPoster{transform:none!important;box-shadow:3px 3px 0 #00000020!important}
-.posterNumber{border-radius:0!important;width:34px!important;height:28px!important;left:0!important;top:0!important;background:#f3ce70!important;font-family:'DM Mono'!important;font-size:11px!important}
-.pin{display:none}
-.tags span{border-radius:0!important}
-.toolPoster{transform:none!important;box-shadow:none!important;background:#c87778!important}.tapeB{display:none}
-.progressLink{box-shadow:none!important}
-.proofIcons svg{box-shadow:none!important}.toolCloud span{box-shadow:none!important}
+/* Technical hero artwork: architectural, restrained and rectangular */
+.techArt{height:330px;position:relative;overflow:hidden;border:1px solid #321714;background:#321714;color:#f7ecd8;isolation:isolate}
+.techGrid{position:absolute;inset:0;background-image:linear-gradient(#f7ecd814 1px,transparent 1px),linear-gradient(90deg,#f7ecd814 1px,transparent 1px);background-size:32px 32px;opacity:.8}
+.terminal{position:absolute;left:5%;top:6%;width:57%;padding:14px;background:#20100f;border:1px solid #8f625b;display:grid;gap:8px}.terminalTop{height:14px;border-bottom:1px solid #68423d;margin-bottom:4px}.terminalTop i{display:inline-block;width:4px;height:4px;background:#9b6b63;margin-right:6px}.terminal code{font:7.5px 'DM Mono';color:#e9d8c6;white-space:nowrap}.terminal code span{color:#d29a8f}
+.systemMap{position:absolute;inset:45% 5% 8%;border-top:1px solid #68423d;border-bottom:1px solid #68423d}.node{position:absolute;z-index:3;background:#321714;color:#f3e5d4;border:1px solid #a16c63;padding:7px 9px;font:600 7px 'DM Mono';letter-spacing:.13em}.node.client{left:2%;top:24%}.node.api{left:38%;top:3%}.node.service{right:2%;top:28%}.node.db{left:42%;bottom:1%;display:flex;align-items:center;gap:6px}.node.db svg{width:14px;height:14px}.flowLine{position:absolute;height:1px;background:#b78178;transform-origin:left center;z-index:1}.l1{width:43%;left:13%;top:38%;transform:rotate(-18deg)}.l2{width:38%;left:48%;top:21%;transform:rotate(20deg)}.l3{width:31%;left:48%;top:32%;transform:rotate(75deg)}.pulse{position:absolute;z-index:4;width:6px;height:6px;background:#f3ce70;animation:formalPulse 2.6s linear infinite}.p1{left:35%;top:25%}.p2{right:24%;top:34%;animation-delay:.7s}.p3{left:48%;bottom:21%;animation-delay:1.4s}.techLabel{position:absolute;right:4%;top:6%;font:6.5px 'DM Mono';letter-spacing:.24em;writing-mode:vertical-rl;color:#d6b4a9}@keyframes formalPulse{0%,100%{opacity:.25;transform:scale(.75)}50%{opacity:1;transform:scale(1)}}
+
+/* Remove scrapbook/cute cues elsewhere */
+.sectionStamp{border-radius:0!important}.aboutPoster{box-shadow:none!important}.quoteBox{transform:none!important}.projectPoster{transform:none!important;box-shadow:3px 3px 0 #00000020!important}.posterNumber{border-radius:0!important;width:34px!important;height:28px!important;left:0!important;top:0!important;background:#f3ce70!important;font-family:'DM Mono'!important;font-size:11px!important}.pin{display:none}.tags span{border-radius:0!important}.toolPoster{transform:none!important;box-shadow:none!important;background:#c87778!important}.tapeB{display:none}.progressLink{box-shadow:none!important}.proofIcons svg{box-shadow:none!important}.toolCloud span{box-shadow:none!important}
+
+/* Resume download — final information block before contact */
+.resumeSection{padding:58px 24px;border-top:1px solid var(--line);background:#eadfca}
+.resumeInner{width:min(var(--pageNarrow),100%);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:44px;align-items:end}
+.resumeKicker{margin:22px 0 6px;font:8px 'DM Mono';letter-spacing:.18em;color:#76534c}
+.resumeInner h2{font-family:'Italiana';font-size:clamp(48px,6vw,78px);line-height:.85;margin:0}
+.resumeMeta{margin:12px 0 0;font:9px 'DM Mono';letter-spacing:.12em;color:#76534c}
+.resumeDownload{min-width:210px;border:1px solid var(--ink);background:var(--ink);color:var(--cream);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:22px;font:600 9px 'DM Mono';letter-spacing:.14em;transition:transform .18s ease,background .18s ease,color .18s ease}
+.resumeDownload:hover{transform:translateY(-2px);background:transparent;color:var(--ink)}
 
 @media(max-width:1080px){
-  .heroSide{grid-template-columns:1fr!important}.miniCard{max-width:none!important}.techArt{height:340px!important}
+  .heroCollageClean{grid-template-columns:1fr 1.25fr;gap:28px}.techArt{height:310px}
+}
+@media(max-width:900px){
+  .heroCollageClean{grid-template-columns:1fr;max-width:760px}.heroCollageClean .introCard{max-width:620px}.techArt{height:300px}
 }
 @media(max-width:640px){
-  .topline span:last-child::after{font-size:6.5px}
-  .introText::after{font-size:11.5px;line-height:1.55}
-  .heroSide{display:block!important}.miniCard{width:100%!important;padding:10px 12px!important}
-  .techArt{height:min(64vw,250px)!important}
-  .terminal{left:5%!important;top:7%!important;width:62%!important;padding:9px!important}.terminal code{font-size:5.8px!important}
-  .systemMap{inset:46% 4% 7%!important}.node{font-size:5.7px!important;padding:5px 6px!important}
-  .photoTag{font-size:6.5px!important;padding:6px 8px!important}
+  .topline span:last-child{font-size:6.5px}
+  .logoMark{width:44px;height:34px}.brandLogo{width:44px;height:34px}
+  .heroCollageClean{grid-template-columns:1fr;gap:16px;margin-top:20px}.introText{font-size:11.5px;line-height:1.55}.techArt{height:min(58vw,230px)}
+  .terminal{left:5%;top:7%;width:64%;padding:9px}.terminal code{font-size:5.8px}.systemMap{inset:46% 4% 7%}.node{font-size:5.7px;padding:5px 6px}.techLabel{font-size:5.7px}
   .posterNumber{width:30px!important;height:24px!important;font-size:9px!important}
+  .resumeSection{padding:44px 14px}.resumeInner{grid-template-columns:1fr;gap:24px;align-items:start}.resumeKicker{margin-top:18px}.resumeInner h2{font-size:16vw}.resumeDownload{width:100%;min-width:0;padding:14px 15px}
 }
-@media(max-width:390px){
-  .techArt{height:62vw!important}.terminal code:nth-of-type(4){display:none}
-}
-@media(prefers-reduced-motion:reduce){.pulse{animation:none!important}}
+@media(max-width:390px){.techArt{height:56vw}.terminal code:nth-of-type(4){display:none}.resumeInner h2{font-size:17vw}}
+@media(prefers-reduced-motion:reduce){.pulse{animation:none!important}.resumeDownload{transition:none}}
