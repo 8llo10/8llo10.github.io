@@ -18,130 +18,26 @@ const commandCenter='https://project-command-center-l6qiq2x08-ghala-alameer-s-pr
 const technicalServices='https://emspsaa.com/';
 const resumeFile='/Ghala-Al-Hashmi-Al-Ameer-CV-2026.pdf';
 
-function ProjectVisual({project}:{project:Project}){
-  const [failed,setFailed]=useState(false);
-  return <div className="posterVisual">{project.image_url&&!failed?<img src={project.image_url} alt={`${project.title} interface`} onError={()=>setFailed(true)}/>:<><div className="fakeWindow"><i/><i/><i/></div><span>PROJECT PREVIEW</span></>}</div>;
-}
-
-function BrandMark(){
-  const [failed,setFailed]=useState(false);
-  return <>{!failed?<img className="brandLogo" src="/images/logo.png" alt="GA" onError={()=>setFailed(true)}/>:<span>G.</span>}</>;
-}
-
-function TechnicalVisual(){
-  return <div className="techArt" aria-label="Animated software system architecture">
-    <div className="techGrid"/>
-    <div className="terminal">
-      <div className="terminalTop"><i/><i/><i/></div>
-      <code><span>POST</span> /api/workflows</code>
-      <code><span>GET</span> /systems/status</code>
-      <code>db.connect()</code>
-      <code>event → process → persist</code>
-    </div>
-    <div className="systemMap">
-      <span className="flowLine l1"/><span className="flowLine l2"/><span className="flowLine l3"/>
-      <div className="node client">CLIENT</div><div className="node api">API</div><div className="node service">SERVICE</div><div className="node db"><Database size={18}/><b>DB</b></div>
-      <i className="pulse p1"/><i className="pulse p2"/><i className="pulse p3"/>
-    </div>
-    <div className="techLabel">SYSTEM / FLOW / DATA</div>
-  </div>;
-}
+function ProjectVisual({project}:{project:Project}){const [failed,setFailed]=useState(false);return <div className="posterVisual">{project.image_url&&!failed?<img src={project.image_url} alt={`${project.title} interface`} onError={()=>setFailed(true)}/>:<><div className="fakeWindow"><i/><i/><i/></div><span>PROJECT PREVIEW</span></>}</div>}
+function BrandMark(){const [failed,setFailed]=useState(false);return <>{!failed?<img className="brandLogo" src="/images/logo.png" alt="GA" onError={()=>setFailed(true)}/>:<span>G.</span>}</>}
+function HeroVisual(){const [failed,setFailed]=useState(false);return <div className="heroImageBox">{!failed?<img src="/images/hero.jpg" alt="Portfolio visual" onError={()=>setFailed(true)}/>:<div className="heroImagePlaceholder"><span>HERO IMAGE</span><small>public/images/hero.jpg</small></div>}</div>}
 
 export default function Home(){
-  const [projects,setProjects]=useState<Project[]>(fallback);
-  const [open,setOpen]=useState(false);
-  const [admin,setAdmin]=useState(false);
-  const [login,setLogin]=useState(false);
-  const [email,setEmail]=useState('');
-  const [password,setPassword]=useState('');
-
-  useEffect(()=>{
-    if(!supabase)return;
-    supabase.from('projects').select('*').order('sort_order').then(({data})=>{if(data?.length)setProjects(data)});
-    supabase.auth.getSession().then(({data})=>setAdmin(!!data.session));
-  },[]);
-
-  async function signIn(e:FormEvent){
-    e.preventDefault();
-    if(!supabase)return alert('Connect Supabase first.');
-    const {error}=await supabase.auth.signInWithPassword({email,password});
-    if(error)return alert(error.message);
-    setAdmin(true);setLogin(false);
-  }
-
-  async function addProject(e:FormEvent<HTMLFormElement>){
-    e.preventDefault();
-    if(!supabase)return alert('Connect Supabase first.');
-    const f=new FormData(e.currentTarget);
-    const item={title:f.get('title'),subtitle:f.get('subtitle'),description:f.get('description'),image_url:f.get('image_url'),live_url:f.get('live_url'),github_url:f.get('github_url'),tags:String(f.get('tags')||'').split(',').map(x=>x.trim()).filter(Boolean),sort_order:projects.length+1};
-    const {data,error}=await supabase.from('projects').insert(item).select().single();
-    if(error)return alert(error.message);
-    setProjects(p=>[...p,data]);setOpen(false);
-  }
+  const [projects,setProjects]=useState<Project[]>(fallback);const [open,setOpen]=useState(false);const [admin,setAdmin]=useState(false);const [login,setLogin]=useState(false);const [email,setEmail]=useState('');const [password,setPassword]=useState('');
+  useEffect(()=>{if(!supabase)return;supabase.from('projects').select('*').order('sort_order').then(({data})=>{if(data?.length)setProjects(data)});supabase.auth.getSession().then(({data})=>setAdmin(!!data.session))},[]);
+  async function signIn(e:FormEvent){e.preventDefault();if(!supabase)return alert('Connect Supabase first.');const {error}=await supabase.auth.signInWithPassword({email,password});if(error)return alert(error.message);setAdmin(true);setLogin(false)}
+  async function addProject(e:FormEvent<HTMLFormElement>){e.preventDefault();if(!supabase)return alert('Connect Supabase first.');const f=new FormData(e.currentTarget);const item={title:f.get('title'),subtitle:f.get('subtitle'),description:f.get('description'),image_url:f.get('image_url'),live_url:f.get('live_url'),github_url:f.get('github_url'),tags:String(f.get('tags')||'').split(',').map(x=>x.trim()).filter(Boolean),sort_order:projects.length+1};const {data,error}=await supabase.from('projects').insert(item).select().single();if(error)return alert(error.message);setProjects(p=>[...p,data]);setOpen(false)}
 
   return <main>
-    <nav>
-      <a className="mark logoMark" href="#top"><BrandMark/></a>
-      <div className="navlinks"><a href="#about">PROFILE</a><a href="#hub">PROJECTS</a><a href="#proof">ENGINEERING</a><a href="#experience">EXPERIENCE</a><a href="#resume">RESUME</a><a href="#contact">CONTACT</a></div>
-      <button className="owner" onClick={()=>admin?setOpen(true):setLogin(true)}>{admin?<><Plus size={14}/> ADD PROJECT</>:'OWNER'}</button>
-    </nav>
-
-    <section id="top" className="hero">
-      <div className="dotField"/>
-      <div className="topline"><span>GHALA AL-HASHMI AL-AMEER</span><span>BACKEND · FULL-STACK · SYSTEMS</span></div>
-      <motion.div className="heroTitle" initial={{opacity:0,y:45}} animate={{opacity:1,y:0}} transition={{duration:.8}}><span>PORT</span><span>FOLIO</span></motion.div>
-      <div className="heroCollage heroCollageClean">
-        <motion.div className="introCard stickerCard" initial={{opacity:0,y:18}} animate={{opacity:1,y:0}}><p className="eyebrow">SOFTWARE ENGINEER</p><h1>GHALA<br/><i>AL-HASHMI</i></h1><p className="introText">Software Engineer focused on backend systems, APIs, databases, integrations and full-stack product development.</p></motion.div>
-        <motion.div className="techFrame" initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{delay:.08}}><TechnicalVisual/></motion.div>
-        <div className="scrollHint"><ArrowDownRight/> SELECTED WORK BELOW</div>
-      </div>
-    </section>
-
-    <section id="about" className="about paperTexture">
-      <div className="sectionStamp">01 / PROFILE</div>
-      <div className="aboutPoster">
-        <div className="aboutLeft"><p className="eyebrow">PROFILE</p><h2>GHALA<br/><span>AL-HASHMI</span></h2><div className="quoteBox">Software Engineer · Backend & Full-Stack</div></div>
-        <div className="aboutRight">
-          <div className="infoBox"><span>EDUCATION</span><b>B.Sc. Software Engineering — Umm Al-Qura University, 2026</b></div>
-          <div className="infoBox"><span>BASE</span><b>Makkah · Jeddah, Saudi Arabia</b></div>
-          <div className="infoBox"><span>FOCUS</span><b>Backend Systems · APIs · Databases · Integrations · Automation</b></div>
-          <div className="infoBox"><span>EXPERIENCE</span><b>Software engineering training in aviation maintenance systems</b></div>
-          <div className="infoBox"><span>STATUS</span><b>Open to Software Engineering · Backend · Full-Stack opportunities</b></div>
-        </div>
-      </div>
-    </section>
-
+    <nav><a className="mark logoMark" href="#top"><BrandMark/></a><div className="navlinks"><a href="#about">PROFILE</a><a href="#hub">PROJECTS</a><a href="#proof">ENGINEERING</a><a href="#experience">EXPERIENCE</a><a href="#resume">RESUME</a><a href="#contact">CONTACT</a></div><button className="owner" onClick={()=>admin?setOpen(true):setLogin(true)}>{admin?<><Plus size={14}/> ADD PROJECT</>:'OWNER'}</button></nav>
+    <section id="top" className="hero"><div className="dotField"/><div className="topline"><span>GHALA AL-HASHMI AL-AMEER</span><span>BACKEND · FULL-STACK · SYSTEMS</span></div><motion.div className="heroTitle" initial={{opacity:0,y:45}} animate={{opacity:1,y:0}} transition={{duration:.8}}><span>PORT</span><span>FOLIO</span></motion.div><div className="heroCollage heroCollageClean"><motion.div className="introCard stickerCard" initial={{opacity:0,y:18}} animate={{opacity:1,y:0}}><p className="eyebrow">SOFTWARE ENGINEER</p><h1>GHALA<br/><i>AL-HASHMI</i></h1><p className="introText">Software Engineer focused on backend systems, APIs, databases, integrations and full-stack product development.</p></motion.div><motion.div className="heroImageWrap" initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{delay:.08}}><HeroVisual/></motion.div><div className="scrollHint"><ArrowDownRight/> SELECTED WORK BELOW</div></div></section>
+    <section id="about" className="about paperTexture"><div className="sectionStamp">01 / PROFILE</div><div className="aboutPoster"><div className="aboutLeft"><p className="eyebrow">PROFILE</p><h2>GHALA<br/><span>AL-HASHMI</span></h2><div className="quoteBox">Software Engineer · Backend & Full-Stack</div></div><div className="aboutRight"><div className="infoBox"><span>EDUCATION</span><b>B.Sc. Software Engineering — Umm Al-Qura University, 2026</b></div><div className="infoBox"><span>BASE</span><b>Makkah · Jeddah, Saudi Arabia</b></div><div className="infoBox"><span>FOCUS</span><b>Backend Systems · APIs · Databases · Integrations · Automation</b></div><div className="infoBox"><span>EXPERIENCE</span><b>Software engineering training in aviation maintenance systems</b></div><div className="infoBox"><span>STATUS</span><b>Open to Software Engineering · Backend · Full-Stack opportunities</b></div></div></div></section>
     <section className="skillsBand"><div className="marquee">{[...stack,...stack].map((s,i)=><span key={i}>{s}<Star size={10} fill="currentColor"/></span>)}</div></section>
-
-    <section id="hub" className="hub">
-      <div className="hubHeader"><div><span className="sectionStamp light">02 / PROJECTS</span><h2>SELECTED <i>WORK</i></h2></div><div><p>Systems covering vehicle diagnostics, field operations, IT automation, email processing and decision records.</p><a className="progressLink" href={commandCenter} target="_blank">PROJECT COMMAND CENTER <ArrowUpRight size={15}/></a></div></div>
-      <div className="projectMasonry">{projects.map((p,i)=><motion.article key={p.id} className={`projectPoster poster${(i%5)+1}`} initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.2}}><div className="posterNumber">{String(i+1).padStart(2,'0')}</div><ProjectVisual project={p}/><div className="posterCopy"><small>{p.subtitle}</small><h3>{p.title}</h3><p>{p.description}</p><div className="tags">{p.tags?.map(t=><span key={t}>{t}</span>)}</div><div className="links">{p.live_url&&<a href={p.live_url} target="_blank">LIVE <ArrowUpRight size={14}/></a>}{p.github_url&&<a href={p.github_url} target="_blank">GITHUB <Github size={14}/></a>}</div></div></motion.article>)}</div>
-    </section>
-
-    <section id="proof" className="experienceSection paperTexture">
-      <span className="sectionStamp">03 / ENGINEERING</span>
-      <div className="experienceGrid"><div className="experienceMain"><h2>ENGINEERING<br/><i>WORKFLOW.</i></h2><div className="timeline"><span className="line"/>
-        <div className="timelineItem"><b>01 · SYSTEM DESIGN</b><small>ERD · entities · permissions · states</small><p>Define the data model, relationships, roles, constraints and state transitions before implementation.</p></div>
-        <div className="timelineItem proofItem"><b>02 · BACKEND</b><small>REST APIs · authentication · validation · business logic</small><p>Implement service and data-access layers with explicit validation, authorization and integration boundaries.</p></div>
-        <div className="timelineItem proofItem"><b>03 · INTEGRATION</b><small>MQTT · BLE · OAuth · realtime · external services</small><p>Connect applications to devices, event streams and third-party services when required by the system.</p></div>
-        <div className="timelineItem proofItem"><b>04 · DEPLOYMENT</b><small>Docker · VPS · cloud platforms · logs</small><p>Configure deployment, environment variables, database connectivity and runtime monitoring.</p></div>
-      </div></div><div className="toolPoster"><p className="eyebrow">TECHNICAL SCOPE</p><div className="proofIcons"><ServerCog/><Database/><Workflow/></div><div className="toolCloud"><span>CLIENT</span><span>REST API</span><span>AUTH</span><span>BUSINESS LOGIC</span><span>POSTGRESQL</span><span>REALTIME</span><span>DEPLOYMENT</span></div></div></div>
-    </section>
-
-    <section id="experience" className="experienceSection paperTexture">
-      <span className="sectionStamp">04 / EXPERIENCE</span>
-      <div className="experienceGrid"><div className="experienceMain"><h2>PRINCE SULTAN<br/><i>AVIATION ACADEMY.</i></h2><div className="timeline"><span className="line"/><div className="timelineItem"><b>SOFTWARE ENGINEERING TRAINEE</b><small>Maintenance & Simulators · Technical Services</small><p>Digitized paper-based maintenance workflows, migrated legacy Microsoft Access data to Power Apps and Dataverse, automated operational calculations, and contributed to a unified interface deployed on the official server.</p><a className="progressLink dark" href={technicalServices} target="_blank">TECHNICAL SERVICES DEPARTMENT <ArrowUpRight size={15}/></a></div></div></div><div className="toolPoster"><p className="eyebrow">WORK DELIVERED</p><div className="toolCloud"><span>WORKFLOW DIGITIZATION</span><span>ACCESS DATA MIGRATION</span><span>POWER APPS</span><span>DATAVERSE</span><span>OPERATIONAL CALCULATIONS</span><span>INTERNAL WEB SYSTEM</span></div></div></div>
-    </section>
-
-    <section id="resume" className="resumeSection">
-      <div className="resumeInner">
-        <div><span className="sectionStamp">05 / RESUME</span><p className="resumeKicker">CURRICULUM VITAE</p><h2>RESUME</h2><p className="resumeMeta">Latest version · Updated 2026</p></div>
-        <a className="resumeDownload" href={resumeFile} download><span>DOWNLOAD CV</span><ArrowDownToLine size={18}/></a>
-      </div>
-    </section>
-
+    <section id="hub" className="hub"><div className="hubHeader"><div><span className="sectionStamp light">02 / PROJECTS</span><h2>SELECTED <i>WORK</i></h2></div><div><p>Systems covering vehicle diagnostics, field operations, IT automation, email processing and decision records.</p><a className="progressLink" href={commandCenter} target="_blank">PROJECT COMMAND CENTER <ArrowUpRight size={15}/></a></div></div><div className="projectMasonry">{projects.map((p,i)=><motion.article key={p.id} className={`projectPoster poster${(i%5)+1}`} initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.2}}><div className="posterNumber">{String(i+1).padStart(2,'0')}</div><ProjectVisual project={p}/><div className="posterCopy"><small>{p.subtitle}</small><h3>{p.title}</h3><p>{p.description}</p><div className="tags">{p.tags?.map(t=><span key={t}>{t}</span>)}</div><div className="links">{p.live_url&&<a href={p.live_url} target="_blank">LIVE <ArrowUpRight size={14}/></a>}{p.github_url&&<a href={p.github_url} target="_blank">GITHUB <Github size={14}/></a>}</div></div></motion.article>)}</div></section>
+    <section id="proof" className="experienceSection paperTexture"><span className="sectionStamp">03 / ENGINEERING</span><div className="experienceGrid"><div className="experienceMain"><h2>ENGINEERING<br/><i>WORKFLOW.</i></h2><div className="timeline"><span className="line"/><div className="timelineItem"><b>01 · SYSTEM DESIGN</b><small>ERD · entities · permissions · states</small><p>Define the data model, relationships, roles, constraints and state transitions before implementation.</p></div><div className="timelineItem proofItem"><b>02 · BACKEND</b><small>REST APIs · authentication · validation · business logic</small><p>Implement service and data-access layers with explicit validation, authorization and integration boundaries.</p></div><div className="timelineItem proofItem"><b>03 · INTEGRATION</b><small>MQTT · BLE · OAuth · realtime · external services</small><p>Connect applications to devices, event streams and third-party services when required by the system.</p></div><div className="timelineItem proofItem"><b>04 · DEPLOYMENT</b><small>Docker · VPS · cloud platforms · logs</small><p>Configure deployment, environment variables, database connectivity and runtime monitoring.</p></div></div></div><div className="toolPoster"><p className="eyebrow">TECHNICAL SCOPE</p><div className="proofIcons"><ServerCog/><Database/><Workflow/></div><div className="toolCloud"><span>CLIENT</span><span>REST API</span><span>AUTH</span><span>BUSINESS LOGIC</span><span>POSTGRESQL</span><span>REALTIME</span><span>DEPLOYMENT</span></div></div></div></section>
+    <section id="experience" className="experienceSection paperTexture"><span className="sectionStamp">04 / EXPERIENCE</span><div className="experienceGrid"><div className="experienceMain"><h2>PRINCE SULTAN<br/><i>AVIATION ACADEMY.</i></h2><div className="timeline"><span className="line"/><div className="timelineItem"><b>SOFTWARE ENGINEERING TRAINEE</b><small>Maintenance & Simulators · Technical Services</small><p>Digitized paper-based maintenance workflows, migrated legacy Microsoft Access data to Power Apps and Dataverse, automated operational calculations, and contributed to a unified interface deployed on the official server.</p><a className="progressLink dark" href={technicalServices} target="_blank">TECHNICAL SERVICES DEPARTMENT <ArrowUpRight size={15}/></a></div></div></div><div className="toolPoster"><p className="eyebrow">WORK DELIVERED</p><div className="toolCloud"><span>WORKFLOW DIGITIZATION</span><span>ACCESS DATA MIGRATION</span><span>POWER APPS</span><span>DATAVERSE</span><span>OPERATIONAL CALCULATIONS</span><span>INTERNAL WEB SYSTEM</span></div></div></div></section>
+    <section id="resume" className="resumeSection"><div className="resumeInner"><div><span className="sectionStamp">05 / RESUME</span><p className="resumeKicker">CURRICULUM VITAE</p><h2>RESUME</h2><p className="resumeMeta">Latest version · Updated 2026</p></div><a className="resumeDownload" href={resumeFile} download><span>DOWNLOAD CV</span><ArrowDownToLine size={18}/></a></div></section>
     <footer id="contact"><div className="footerStar">✦</div><div><p className="script">CONTACT</p><h2>GHALA<br/>AL-HASHMI</h2></div><div className="footerLinks"><a href="mailto:ghalaalameer8@gmail.com"><Mail/>ghalaalameer8@gmail.com</a><a href="tel:+966560602239"><Phone/>+966 56 060 2239</a><a href="https://github.com/8llo10" target="_blank"><Github/>github.com/8llo10</a><a href="https://www.linkedin.com/in/ghala-abdullah-alameer-541733373" target="_blank"><Linkedin/>LINKEDIN</a><span><MapPin/>MAKKAH · JEDDAH · SAUDI ARABIA</span></div></footer>
-
     {(login||open)&&<div className="modalBack"><div className="modal"><button className="close" onClick={()=>{setLogin(false);setOpen(false)}}><X/></button>{login?<form onSubmit={signIn}><small>PRIVATE AREA</small><h3>Owner access</h3><input placeholder="Email" type="email" value={email} onChange={e=>setEmail(e.target.value)} required/><input placeholder="Password" type="password" value={password} onChange={e=>setPassword(e.target.value)} required/><button>ENTER</button></form>:<form onSubmit={addProject}><small>PROJECTS / CMS</small><h3>Add a project</h3><input name="title" placeholder="Project title" required/><input name="subtitle" placeholder="Short subtitle"/><textarea name="description" placeholder="What did you build?" required/><input name="tags" placeholder="Tags, comma, separated"/><input name="image_url" placeholder="Image URL (optional)"/><input name="live_url" placeholder="Live project URL"/><input name="github_url" placeholder="GitHub URL"/><button>PUBLISH PROJECT</button></form>}</div></div>}
   </main>;
 }
