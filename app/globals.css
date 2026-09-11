@@ -134,3 +134,32 @@ footer{background:#281110;color:var(--cream);padding:80px 4vw;display:grid;grid-
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee{animation:none}*{transition:none!important}}
+
+/* Compact scale pass: preserve the exact composition, reduce scroll weight */
+@media(min-width:1081px){
+  nav{height:58px}.mark{font-size:30px}.navlinks{gap:20px;font-size:8px}.owner{padding:7px 11px;font-size:8px}
+  .hero{min-height:auto;padding:18px 4vw 42px}.topline{padding-bottom:10px;font-size:8px}.heroTitle{font-size:clamp(86px,14vw,190px);margin-top:16px}.heroCollage{grid-template-columns:minmax(250px,.95fr) minmax(300px,1.05fr) minmax(170px,.56fr);gap:24px;min-height:430px;margin-top:4px}.introCard{padding:27px 25px}.introCard h1{font-size:clamp(38px,4.1vw,60px)}.introText{font-size:12px;margin:17px 0}.scribble{font-size:20px}.portrait{height:410px}.photoTag{bottom:24px;padding:8px 12px;font-size:8px}.heroSide{gap:18px}.miniCard{padding:14px;max-width:195px}.yearBadge{width:100px;height:100px}.yearBadge strong{font-size:29px}.yearBadge span{font-size:7px}
+  .about,.experienceSection{padding:62px 4vw 70px}.aboutPoster{margin-top:28px}.aboutLeft,.aboutRight{padding:38px}.aboutLeft h2,.experienceMain h2{font-size:clamp(46px,5.2vw,78px)}.quoteBox{margin-top:28px;padding:16px;font-size:18px}.aboutRight p{font-size:13px;line-height:1.65}.infoBox{padding:11px 0}.skillsBand{padding:10px 0}.marquee span{font-size:9px}
+  .hub{padding:68px 4vw 82px}.hubHeader{margin-bottom:38px;gap:30px}.hubHeader h2{font-size:clamp(66px,8vw,112px);margin-top:12px}.hubHeader p{font-size:12px;line-height:1.6}.projectMasonry{gap:20px}.poster2{margin-top:55px}.poster5{margin-top:42px}.posterVisual{height:245px}.posterCopy{padding:14px 7px 8px}.posterCopy h3{font-size:32px}.posterCopy p{font-size:11px;line-height:1.55}.posterNumber{width:40px;height:40px;font-size:18px}.tags span{padding:5px 8px;font-size:8px}.links{margin-top:13px}.links a{font-size:8px}
+  .experienceGrid{gap:4.5vw;margin-top:28px}.experienceMain h2{margin-bottom:32px}.timelineItem b{font-size:10px}.timelineItem p{font-size:13px;line-height:1.6}.proofItem{margin-top:24px}.toolPoster{padding:30px}.toolPoster h3{font-size:40px}.toolCloud span{padding:6px 8px;font-size:8px}.tinyNote{font-size:20px;margin-top:20px}.proofIcons{margin:14px 0 20px}.proofIcons svg{width:36px;height:36px;padding:8px}
+  footer{padding:54px 4vw}.footerStar{font-size:54px}.script{font-size:24px}.footerStar+div h2{font-size:clamp(48px,6vw,82px)}
+}
+
+@media(max-width:1080px) and (min-width:641px){
+  nav{height:58px}.mark{font-size:30px}.owner{padding:7px 10px}
+  .hero{padding-top:16px;padding-bottom:38px}.heroTitle{font-size:15.5vw;margin-top:16px}.heroCollage{gap:24px;padding-bottom:52px}.introCard{padding:24px}.introCard h1{font-size:clamp(38px,5.5vw,52px)}.introText{font-size:12px;margin:16px 0}.scribble{font-size:19px}.portrait{height:390px}.heroSide{gap:16px}.yearBadge{width:94px;height:94px}.yearBadge strong{font-size:27px}
+  .about,.experienceSection,.hub{padding-top:56px;padding-bottom:62px}.aboutPoster{margin-top:26px}.aboutLeft,.aboutRight{padding:34px}.aboutLeft h2,.experienceMain h2{font-size:8vw}.quoteBox{margin-top:25px;padding:15px;font-size:18px}.hubHeader{margin-bottom:34px}.hubHeader h2{font-size:13vw}.posterVisual{height:230px}.posterCopy h3{font-size:30px}.posterCopy p{font-size:11.5px}.experienceGrid{gap:34px;margin-top:28px}.toolPoster{padding:28px}.toolPoster h3{font-size:38px}footer{padding:48px 24px}.footerStar+div h2{font-size:9vw}
+}
+
+@media(max-width:640px){
+  nav{height:54px}.mark{font-size:28px}.owner{padding:7px 9px}
+  .hero{padding:13px 14px 28px}.topline{font-size:6.5px}.heroTitle{font-size:21vw;line-height:.74;margin-top:14px}.heroCollage{gap:18px;margin-top:22px}.introCard{padding:21px 18px}.introCard h1{font-size:clamp(39px,11vw,50px)}.introText{font-size:12px;line-height:1.55;margin:14px 0}.scribble{font-size:18px}.portrait{height:min(88vw,360px)}.photoTag{right:8px;bottom:14px;padding:7px 10px;font-size:7px}.heroSide{gap:12px}.miniCard{padding:12px}.miniCard b{font-size:10px}.miniCard small{font-size:8px}.yearBadge{width:78px;height:78px}.yearBadge strong{font-size:23px}.yearBadge span{font-size:5.8px}
+  .about,.experienceSection,.hub{padding:42px 14px 48px}.sectionStamp{padding:6px 9px;font-size:7px}.aboutPoster{margin-top:20px;box-shadow:6px 6px 0 var(--ink)}.aboutLeft,.aboutRight{padding:23px 18px}.aboutLeft h2,.experienceMain h2{font-size:12.5vw}.quoteBox{font-size:16px;margin-top:20px;padding:14px}.infoBox{padding:10px 0}.aboutRight p{font-size:12px;line-height:1.6}.skillsBand{padding:9px 0}.marquee span{font-size:8px}
+  .hubHeader{margin-bottom:25px;gap:14px}.hubHeader h2{font-size:18vw}.hubHeader p{font-size:11.5px;line-height:1.55}.progressLink{padding:9px 11px;font-size:7.5px}.projectMasonry{gap:22px}.projectPoster{padding:8px;box-shadow:5px 5px 0 #0000003d}.posterNumber{width:35px;height:35px;font-size:16px}.posterVisual{height:46vw;min-height:165px;max-height:220px}.posterCopy{padding:12px 4px 6px}.posterCopy small{font-size:8px}.posterCopy h3{font-size:26px;margin:3px 0 6px}.posterCopy p{font-size:11px;line-height:1.55}.tags{gap:5px}.tags span{padding:5px 7px;font-size:8px}.links{gap:12px;margin-top:12px}.links a{font-size:8px}.pin{font-size:19px}
+  .experienceGrid{gap:28px;margin-top:24px}.experienceMain h2{margin-bottom:24px}.timeline{padding-left:22px}.timelineItem b{font-size:9px}.timelineItem small{font-size:11px;margin:6px 0 10px}.timelineItem p{font-size:12px;line-height:1.55}.proofItem{margin-top:22px}.toolPoster{padding:21px 17px;box-shadow:5px 6px 0 var(--ink)}.toolPoster h3{font-size:32px}.toolCloud span{font-size:7.5px;padding:6px 7px}.tinyNote{font-size:18px;margin-top:18px}.proofIcons{margin:12px 0 17px}.proofIcons svg{width:32px;height:32px;padding:7px}
+  footer{padding:42px 16px;gap:14px}.footerStar{font-size:36px}.script{font-size:20px}.footerStar+div h2{font-size:13.5vw}.footerLinks{gap:10px;margin-top:8px}.footerLinks a,.footerLinks span{font-size:7.5px}
+}
+
+@media(max-width:390px){
+  .heroTitle{font-size:20vw}.portrait{height:92vw}.heroSide{grid-template-columns:minmax(0,1fr) 74px}.yearBadge{width:74px;height:74px;justify-self:end;order:2}.miniCard{order:1}.aboutLeft h2,.experienceMain h2{font-size:13vw}.hubHeader h2{font-size:19vw}.footerStar+div h2{font-size:14vw}
+}
