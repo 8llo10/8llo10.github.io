@@ -74,10 +74,10 @@ export default function Home(){
       <div className="topline"><span>SOFTWARE ENGINEER · FULL-STACK · BACKEND</span><span>PORTFOLIO / 2026</span></div>
       <motion.div className="heroTitle" initial={{opacity:0,y:45}} animate={{opacity:1,y:0}} transition={{duration:.8}}><span>PORT</span><span>FOLIO</span></motion.div>
       <div className="heroCollage">
-        <motion.div className="introCard stickerCard" initial={{rotate:-3,opacity:0}} animate={{rotate:-2,opacity:1}}><span className="tape tapeA"/><p className="eyebrow">HELLO, I&apos;M</p><h1>GHALA<br/><i>AL-HASHMI</i></h1><p className="introText">I build full-stack products with real backend logic, databases, integrations, authentication and deployment — not interface-only demos.</p><div className="scribble">build → test → ship ✦</div></motion.div>
-        <motion.div className="portraitFrame" initial={{scale:.92,opacity:0}} animate={{scale:1,opacity:1}}><PortraitVisual/><div className="photoTag">SOFTWARE ENGINEER</div></motion.div>
+        <motion.div className="introCard stickerCard" initial={{rotate:-3,opacity:0}} animate={{rotate:-1,opacity:1}}><span className="tape tapeA"/><p className="eyebrow">HELLO, I&apos;M</p><h1>GHALA<br/><i>AL-HASHMI</i></h1><p className="introText">I build full-stack products with real backend logic, databases, integrations, authentication and deployment — not interface-only demos.</p><div className="scribble">build → test → ship ✦</div></motion.div>
+        <motion.div className="portraitFrame" initial={{scale:.96,opacity:0}} animate={{scale:1,opacity:1}}><PortraitVisual/><div className="photoTag">SOFTWARE ENGINEER</div></motion.div>
         <div className="miniCard"><Sparkles size={18}/><b>BACKEND × FULL-STACK</b><small>REAL SYSTEMS · REAL DEPLOYMENTS</small></div>
-        <div className="yearBadge"><span>BASED IN</span><strong>KSA</strong><span>BUILD · SHIP · SOLVE</span></div>
+        <div className="yearBadge"><span>EST.</span><strong>2025</strong><span>SAUDI ARABIA</span></div>
         <div className="scrollHint"><ArrowDownRight/> SCROLL TO EXPLORE</div>
       </div>
     </section>
