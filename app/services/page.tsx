@@ -11,6 +11,9 @@ const services = [
   { icon: <Bot />, title: 'AI وربط الخدمات', text: 'ذكاء اصطناعي وAPIs وأتمتة عند حاجة المشروع.' },
 ];
 
+const telegramPhone = '966560602239';
+const telegramUsername = '@O8llo10';
+
 export default function ServicesPage() {
   const [name, setName] = useState('');
   const [type, setType] = useState('');
@@ -30,7 +33,7 @@ export default function ServicesPage() {
       `الميزانية التقريبية: ${budget || 'غير محددة'}`,
     ].join('\n');
 
-    window.open(`https://t.me/O8llo10?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    window.location.href = `https://t.me/+${telegramPhone}?text=${encodeURIComponent(message)}`;
   }
 
   return (
@@ -96,7 +99,7 @@ export default function ServicesPage() {
           <span>03 / PROJECT REQUEST</span>
           <h2>اطلب مشروعك</h2>
           <p>عبّ البيانات الأساسية، وبعدها يفتح لك تيليجرام برسالة جاهزة على محادثتي مباشرة.</p>
-          <a className="telegramDirect" href="https://t.me/O8llo10" target="_blank" rel="noreferrer"><Send size={17}/> @O8llo10</a>
+          <a className="telegramDirect" href={`https://t.me/+${telegramPhone}`} target="_blank" rel="noreferrer"><Send size={17}/> {telegramUsername}</a>
         </div>
 
         <form className="requestForm" onSubmit={sendTelegramRequest}>
@@ -141,7 +144,7 @@ export default function ServicesPage() {
           <p>إذا ما تبغى تعبي الفورم، تقدر تتواصل مباشرة.</p>
         </div>
         <div className="contactCards">
-          <a className="contactCard telegram" href="https://t.me/O8llo10" target="_blank" rel="noreferrer"><Send/><div><small>@O8llo10</small><strong>Telegram</strong></div><ArrowUpRight/></a>
+          <a className="contactCard telegram" href={`https://t.me/+${telegramPhone}`} target="_blank" rel="noreferrer"><Send/><div><small>{telegramUsername}</small><strong>Telegram</strong></div><ArrowUpRight/></a>
           <a className="contactCard whatsapp" href="https://wa.me/966560602239?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D9%81%D9%83%D8%B1%D8%A9%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9" target="_blank" rel="noreferrer"><MessageCircle/><div><small>تواصل مباشر</small><strong>WhatsApp</strong></div><ArrowUpRight/></a>
           <a className="contactCard" href="https://www.linkedin.com/in/ghala-abdullah-alameer-541733373" target="_blank" rel="noreferrer"><Linkedin/><div><small>الملف المهني</small><strong>LinkedIn</strong></div><ArrowUpRight/></a>
           <a className="contactCard" href="https://8llo10.github.io/" target="_blank" rel="noreferrer"><ExternalLink/><div><small>الأعمال السابقة</small><strong>Portfolio</strong></div><ArrowUpRight/></a>
