@@ -30,7 +30,7 @@ export default function ServicesPage() {
       `نوع المشروع: ${type}`,
       `فكرة المشروع / المطلوب: ${details}`,
       `الموعد المطلوب: ${deadline}`,
-      `الميزانية التقريبية: ${budget || 'غير محددة'}`,
+      `الميزانية التقريبية: ${budget ? `${budget} ريال` : 'غير محددة'}`,
     ].join('\n');
 
     window.location.href = `https://t.me/+${telegramPhone}?text=${encodeURIComponent(message)}`;
@@ -131,7 +131,7 @@ export default function ServicesPage() {
           </label>
           <label>
             <span>الميزانية التقريبية <small>اختياري</small></span>
-            <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="مثال: 1500 - 2500 ريال" />
+            <input type="number" min="1000" max="5000" step="100" value={budget} onChange={e => setBudget(e.target.value)} placeholder="من 1000 إلى 5000 ريال" />
           </label>
           <button className="sendRequestBtn" type="submit">فتح المحادثة وإرسال الطلب <Send size={18}/></button>
         </form>
