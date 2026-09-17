@@ -39,7 +39,7 @@ export default function ServicesPage() {
   return (
     <main className="servicePage" dir="rtl">
       <nav className="serviceNav">
-        <a className="serviceMark" href="/">G.</a>
+        <a className="serviceMark" href="/" aria-label="Portfolio"><img src="/images/logo.png" alt="GA" /></a>
         <div className="serviceNavLinks">
           <a href="#services">الخدمات</a>
           <a href="#request">طلب مشروع</a>
