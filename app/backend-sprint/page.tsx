@@ -1,5 +1,5 @@
-import Tracker from './Tracker';
+import PublicViewer from './PublicViewer';
 
 export default function BackendRoadmapPage() {
-  return <Tracker />;
+  return <PublicViewer />;
 }
