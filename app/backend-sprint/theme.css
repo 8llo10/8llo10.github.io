@@ -1,0 +1,213 @@
+.be-site{
+  --bg:#0e0b1a;
+  --panel:#171329;
+  --panel2:#1d1832;
+  --panel3:#241d3b;
+  --ink:#f8f6ff;
+  --muted:#b9b2ca;
+  --subtle:#817999;
+  --line:#342a50;
+  --green:#62e6b3;
+  --violet:#a78bfa;
+  --blue:#7cc7ff;
+  --amber:#f4c97a;
+  --danger:#ff8f9b;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(167,139,250,.22),transparent 34%),
+    radial-gradient(circle at 88% 10%,rgba(98,230,179,.14),transparent 28%),
+    radial-gradient(circle at 50% 62%,rgba(124,199,255,.07),transparent 35%),
+    linear-gradient(180deg,#100c1e 0%,#0f0c1b 45%,#0b0915 100%) !important;
+  color:var(--ink) !important;
+}
+
+.be-gridBg{
+  opacity:.24 !important;
+  background-image:linear-gradient(rgba(167,139,250,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(98,230,179,.07) 1px,transparent 1px) !important;
+  background-size:46px 46px !important;
+}
+
+.be-topline{border-color:rgba(167,139,250,.24) !important;color:#aaa2c4 !important}
+.be-live i{background:#62e6b3 !important;box-shadow:0 0 0 4px rgba(98,230,179,.08),0 0 18px rgba(98,230,179,.55) !important}
+.be-eyebrow,.be-sectionHead>div p{color:#77efbd !important}
+.be-hero h1{color:#faf8ff !important}
+.be-hero h1 span{
+  color:transparent !important;
+  background:linear-gradient(90deg,#b9a8ff 0%,#8f7cff 38%,#62e6b3 100%);
+  -webkit-background-clip:text;background-clip:text;
+}
+.be-lead{color:#beb8cf !important}
+.be-stack span{background:rgba(28,22,48,.78) !important;border-color:#40345f !important;color:#d9d2ed !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+
+.be-currentCard{
+  background:linear-gradient(145deg,rgba(40,29,70,.96),rgba(22,18,40,.96)) !important;
+  border-color:#4b3c70 !important;
+  box-shadow:0 24px 70px rgba(3,2,10,.45),0 0 0 1px rgba(167,139,250,.04) inset !important;
+}
+.be-currentCard:before{background:rgba(167,139,250,.20) !important;width:190px !important;height:190px !important;filter:blur(18px) !important}
+.be-currentCard:after{content:"";position:absolute;right:-55px;bottom:-80px;width:170px;height:170px;border-radius:50%;background:rgba(98,230,179,.10);filter:blur(18px);pointer-events:none}
+.be-currentCard>strong{color:#4e4171 !important}
+.be-currentCard h2{color:#fff !important}
+.be-currentCard>p,.be-currentMeta span{color:#968da9 !important}
+.be-currentMeta{border-color:#3a2f56 !important}
+.be-currentMeta b{color:#ded8ed !important}
+
+.be-overview>div,.be-progressPrimary,.be-progressStat,.be-sprintLive>div{
+  background:linear-gradient(145deg,rgba(30,24,52,.94),rgba(21,17,38,.94)) !important;
+  border-color:#3b3058 !important;
+  box-shadow:0 12px 34px rgba(4,2,12,.20),inset 0 1px 0 rgba(255,255,255,.025) !important;
+}
+.be-overview small,.be-progressStat small,.be-sprintLive small{color:#938aa8 !important}
+.be-overview span,.be-progressStat p{color:#9189a2 !important}
+.be-overview i{background:#2a2240 !important;height:5px !important}
+.be-overview i b{background:linear-gradient(90deg,#9b7cff,#62e6b3) !important;box-shadow:0 0 16px rgba(98,230,179,.28)}
+
+.be-tabs{
+  background:rgba(19,15,34,.82) !important;
+  border-color:#40345e !important;
+  box-shadow:0 18px 44px rgba(4,2,12,.28) !important;
+}
+.be-tabs button{color:#9b93ae !important}
+.be-tabs button.active{background:linear-gradient(135deg,#2d2450,#21203d) !important;color:#fff !important;box-shadow:inset 0 0 0 1px #5f4e88,0 8px 24px rgba(13,8,32,.28) !important}
+
+.be-rail span{background:#171329 !important;border-color:#45385f !important;color:#a69db8 !important}
+.be-rail i{background:linear-gradient(180deg,rgba(167,139,250,.50),rgba(98,230,179,.20)) !important;width:2px !important}
+.be-phase.active .be-rail span{background:#2a214a !important;color:#d7cdff !important;border-color:#8d73d3 !important;box-shadow:0 0 0 5px rgba(167,139,250,.08),0 0 20px rgba(167,139,250,.18) !important}
+.be-phase.completed .be-rail span{background:#153329 !important;color:#a8f1cf !important;border-color:#4d9a75 !important;box-shadow:0 0 0 5px rgba(98,230,179,.06) !important}
+
+.be-phaseCard,.be-day,.be-rhythm,.be-dateControl{
+  background:linear-gradient(180deg,rgba(28,22,48,.96),rgba(20,16,36,.96)) !important;
+  border-color:#382d53 !important;
+  box-shadow:0 10px 32px rgba(4,2,12,.18) !important;
+}
+.be-phase.active .be-phaseCard{border-color:#7660ac !important;box-shadow:0 12px 38px rgba(82,57,137,.16) !important}
+.be-phase.completed .be-phaseCard,.be-day.done{border-color:#34765a !important}
+.be-phaseHeader p,.be-sectionHead>p,.be-session p{color:#b0a9bf !important}
+.be-phaseMeta>span,.be-day header small{color:#9188a5 !important}
+.status.planned{background:#211b34 !important;color:#9b93ae !important;border-color:#403653 !important}
+.status.active{background:#332655 !important;color:#d5c8ff !important;border-color:#725ba8 !important}
+.status.completed{background:#17352a !important;color:#a7efd0 !important;border-color:#39765b !important}
+
+.be-timestamps{background:rgba(13,10,25,.62) !important;border-color:#342a4e !important}
+.be-timestamps>div+div{border-color:#342a4e !important}
+.be-timestamps span{color:#8d849f !important}
+.be-timestamps b{color:#d3ccdf !important}
+.be-phaseBody{border-color:#392e54 !important}
+.be-scopeBlock h4{color:#f0ecf8 !important}
+.be-scopeGrid span{color:#beb7c9 !important}
+.be-scopeGrid svg{color:#62e6b3 !important}
+.be-evidence{background:linear-gradient(135deg,rgba(47,36,78,.72),rgba(25,20,43,.76)) !important;border-color:#53416f !important}
+.be-evidence small{color:#d6c6ff !important}
+.be-evidence p{color:#c1b9cc !important}
+
+.be-phaseActions a{background:#173328 !important;color:#b8f3d7 !important;border-color:#387559 !important}
+.be-phaseActions a.secondary{background:#32263d !important;color:#f3d79e !important;border-color:#695473 !important}
+.be-phaseActions button,.be-actions button,.be-management button{background:#241d3c !important;color:#ede8f7 !important;border-color:#4a3b69 !important}
+.be-phaseActions .start,.be-actions .primary{background:linear-gradient(135deg,#8f73e7,#6b5bc6) !important;color:#fff !important;border-color:#a18cf1 !important;box-shadow:0 8px 22px rgba(116,89,205,.24) !important}
+.be-phaseActions .complete{background:linear-gradient(135deg,#2d8a67,#247456) !important;color:#f3fff9 !important;border-color:#54b98c !important}
+
+.be-syncBanner.owner{background:linear-gradient(135deg,rgba(43,31,72,.95),rgba(18,47,38,.92)) !important;border-color:#5b4d81 !important}
+.be-syncIcon{background:#2a2240 !important;color:#78edba !important}
+.be-activeTimer{background:linear-gradient(135deg,rgba(39,30,68,.95),rgba(25,20,46,.95)) !important;border-color:#6c58a0 !important;box-shadow:0 14px 42px rgba(4,2,12,.30) !important}
+.be-activeTimer>strong{color:#7ce8ba !important}
+
+.be-rhythm{padding:12px !important}
+.be-rhythm div{background:#241d3b !important}
+.be-rhythm svg{color:#b29cff !important}
+.be-rhythm span,.be-rhythm>small{color:#9289a7 !important}
+.be-daySessions{border-color:#352a50 !important}
+.be-session{border-color:#302744 !important}
+.be-session.checked{background:linear-gradient(90deg,rgba(24,68,50,.52),rgba(28,22,48,.28)) !important}
+.be-sessionTimer.running{background:linear-gradient(90deg,rgba(67,49,111,.72),rgba(25,67,50,.42)) !important;box-shadow:inset 3px 0 0 #a78bfa !important}
+.be-session time,.be-sessionMeta{color:#9b92ad !important}
+.be-sessionControls button,.be-doneMark{background:#201a35 !important;border-color:#493b64 !important;color:#aaa1bc !important}
+.be-sessionControls .doneBtn{background:#17372b !important;border-color:#438264 !important;color:#87e7bb !important}
+.be-doneMark{background:#15372a !important;border-color:#3d7e60 !important;color:#8ce9bd !important}
+.be-break{background:#110e20 !important;color:#8c839c !important}
+.be-break.checked{background:#12291f !important;color:#8fdbb5 !important}
+.be-break button{background:#211a37 !important;border-color:#44375f !important;color:#bbb2ca !important}
+
+/* Progress timeline: vertical milestone path instead of a dense table */
+.be-timelineTable{
+  position:relative !important;
+  display:grid !important;
+  gap:12px !important;
+  margin-top:24px !important;
+  padding-left:34px !important;
+}
+.be-timelineTable:before{
+  content:"";
+  position:absolute;
+  left:11px;
+  top:18px;
+  bottom:18px;
+  width:2px;
+  border-radius:99px;
+  background:linear-gradient(180deg,#a78bfa 0%,#7b67d1 45%,#62e6b3 100%);
+  opacity:.55;
+  box-shadow:0 0 16px rgba(167,139,250,.16);
+}
+.be-timelineTable>div{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:58px minmax(0,1.5fr) repeat(3,minmax(110px,.72fr)) !important;
+  gap:12px !important;
+  align-items:center !important;
+  margin:0 !important;
+  padding:15px 16px !important;
+  border-radius:17px !important;
+  border:1px solid #3d3159 !important;
+  background:linear-gradient(135deg,rgba(32,25,55,.96),rgba(22,18,39,.96)) !important;
+  box-shadow:0 12px 32px rgba(4,2,12,.18) !important;
+}
+.be-timelineTable>div:before{
+  content:"";
+  position:absolute;
+  left:-29px;
+  top:20px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#b39cff,#62e6b3);
+  border:3px solid #100c1e;
+  box-shadow:0 0 0 3px rgba(167,139,250,.14),0 0 16px rgba(98,230,179,.20);
+}
+.be-timelineTable>div>span{
+  display:grid !important;
+  place-items:center !important;
+  width:40px !important;
+  height:40px !important;
+  border-radius:12px !important;
+  background:#2a2147 !important;
+  border:1px solid #5a477d !important;
+  color:#d6caff !important;
+  font-weight:800 !important;
+}
+.be-timelineTable b{color:#eee9f7 !important}
+.be-timelineTable small{color:#8f86a0 !important}
+
+.be-management{background:linear-gradient(145deg,rgba(31,24,52,.96),rgba(21,17,37,.96)) !important;border-color:#3d3159 !important;box-shadow:0 14px 36px rgba(4,2,12,.18) !important}
+.be-footer{border-color:#312744 !important;color:#8d849d !important}
+.be-toast{background:#241d3b !important;border-color:#594675 !important;color:#f5f1fb !important}
+
+@media(max-width:720px){
+  .be-site{background:radial-gradient(circle at 20% 0%,rgba(167,139,250,.20),transparent 28%),radial-gradient(circle at 90% 18%,rgba(98,230,179,.11),transparent 23%),linear-gradient(180deg,#100c1e,#0c0917) !important}
+  .be-hero{padding-top:20px !important}
+  .be-hero h1{font-size:clamp(43px,13vw,64px) !important}
+  .be-overview{gap:9px !important}
+  .be-overview>div{border-radius:16px !important;padding:14px !important}
+  .be-phase{grid-template-columns:36px 1fr !important;gap:8px !important}
+  .be-phaseCard{border-radius:18px !important}
+  .be-timelineTable{padding-left:30px !important;gap:10px !important}
+  .be-timelineTable:before{left:9px !important}
+  .be-timelineTable>div{
+    grid-template-columns:48px minmax(0,1fr) !important;
+    gap:8px 10px !important;
+    padding:14px !important;
+    border-radius:16px !important;
+  }
+  .be-timelineTable>div:before{left:-27px !important;top:18px !important}
+  .be-timelineTable>div>span{width:38px !important;height:38px !important;border-radius:11px !important}
+  .be-timelineTable>div>div:nth-child(n+3){grid-column:2 !important;display:grid !important;grid-template-columns:76px 1fr !important;align-items:center !important;padding-top:5px !important;border-top:1px solid rgba(167,139,250,.10) !important}
+  .be-timelineTable>div>div:nth-child(n+3) small{margin:0 !important}
+  .be-timelineTable>div>div:nth-child(n+3) b{text-align:right !important;font-size:8px !important}
+}
