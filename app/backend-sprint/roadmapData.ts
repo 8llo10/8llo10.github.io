@@ -1,0 +1,236 @@
+export type Phase = {
+  id: number;
+  title: string;
+  area: string;
+  summary: string;
+  scope: string[];
+  evidence: string;
+  course?: string;
+  course2?: string;
+};
+
+export type SprintDay = {
+  day: number;
+  title: string;
+  phase: string;
+  sessions: [string, string, string, string];
+};
+
+export const phases: Phase[] = [
+  {
+    id: 1,
+    title: 'System Design Foundations',
+    area: 'Architecture Overview',
+    summary: 'تكوين صورة ذهنية واضحة لكيف تتحرك الطلبات والبيانات داخل الأنظمة قبل الدخول في تفاصيل التنفيذ.',
+    scope: ['Client–Server model', 'Single-server architecture', 'SQL vs NoSQL', 'Vertical & horizontal scaling', 'Load balancing & health checks', 'REST & GraphQL overview', 'Authentication vs authorization'],
+    evidence: 'رسم Request Flow من المستخدم إلى الـAPI ثم قاعدة البيانات، مع توضيح نقاط التوسع والمخاطر الأساسية.',
+    course: 'https://www.youtube.com/watch?v=C842vFY5kRo',
+  },
+  {
+    id: 2,
+    title: 'JavaScript Fundamentals',
+    area: 'Language Foundation',
+    summary: 'بناء أساس لغوي ومنطقي قوي قبل الاعتماد على TypeScript أو أي Backend framework.',
+    scope: ['Variables & data types', 'Conditions & loops', 'Functions', 'Arrays & objects', 'Scope & closures', 'Promises', 'Async/await', 'Error handling'],
+    evidence: 'حل تمارين منطقية وبناء mini application بدون framework وبدون نسخ الحل.',
+    course: 'https://www.youtube.com/watch?v=jS4aFq5-91M',
+  },
+  {
+    id: 3,
+    title: 'TypeScript',
+    area: 'Primary Language',
+    summary: 'اعتماد TypeScript كلغة رئيسية للمسار لرفع وضوح الكود وسلامة الأنواع وقابلية الصيانة.',
+    scope: ['Type inference', 'Interfaces & type aliases', 'Union types & narrowing', 'Generics', 'Utility types', 'Typed async code', 'Return types'],
+    evidence: 'إعادة بناء المشروع السابق بـTypeScript مع استخدام typing واضح وقابل للصيانة.',
+    course: 'https://www.youtube.com/watch?v=SpwzRDUQ1GI',
+  },
+  {
+    id: 4,
+    title: 'Git & GitHub Workflow',
+    area: 'Engineering Workflow',
+    summary: 'استخدام Git كسجل هندسي فعلي للمشروع، وليس فقط كوسيلة لرفع الملفات.',
+    scope: ['Commits & history', 'Remote repositories', 'Branches', 'Merge workflows', 'Conflict resolution', 'Safe undo', 'README & repository hygiene'],
+    evidence: 'Repository يحتوي على feature branch وmerge واضح وcommits مرتبة وREADME قابل للمراجعة.',
+    course: 'https://www.youtube.com/watch?v=RGOj5yH7evk',
+  },
+  {
+    id: 5,
+    title: 'Node.js, HTTP & Express',
+    area: 'Runtime & API Fundamentals',
+    summary: 'فهم بيئة Node.js وبروتوكول HTTP قبل الانتقال إلى abstraction أعلى مثل NestJS.',
+    scope: ['Node runtime', 'Modules & npm', 'Environment variables', 'Filesystem', 'HTTP request/response lifecycle', 'Event loop', 'Streams basics', 'Express routing', 'Middleware', 'REST conventions', 'Status codes'],
+    evidence: 'REST API منظمة إلى controllers/services مع error handling وPostman collection.',
+    course: 'https://www.youtube.com/watch?v=Oe421EPjeBE',
+  },
+  {
+    id: 6,
+    title: 'Backend Practice Projects',
+    area: 'Applied Repetition',
+    summary: 'تثبيت المفاهيم عبر عدة Domains بنفس الأدوات حتى تصبح بنية الـBackend مألوفة بدل الاعتماد على حفظ مشروع واحد.',
+    scope: ['Task Manager API', 'Store API', 'JWT Basics', 'Jobs API', 'Validation', 'Error handling', 'Protected routes', 'Ownership rules'],
+    evidence: 'أربعة مشاريع قابلة للتشغيل وموثقة، مع القدرة على إعادة بناء الأجزاء الأساسية من الصفر.',
+    course: 'https://www.youtube.com/watch?v=qwfE7fSVaZM',
+  },
+  {
+    id: 7,
+    title: 'SQL & PostgreSQL',
+    area: 'Data Foundation',
+    summary: 'إتقان SQL ونمذجة البيانات قبل استخدام ORM حتى تكون قرارات قاعدة البيانات مفهومة وليست مخفية خلف مكتبة.',
+    scope: ['DDL & constraints', 'CRUD queries', 'Primary & foreign keys', 'JOINs', 'GROUP BY / HAVING', 'Relationships', 'Indexes', 'Transactions & ACID', 'Normalization'],
+    evidence: 'تصميم قاعدة بيانات لنظام حجز وكتابة 20+ query يدويًا تشمل joins وaggregations وtransactions.',
+    course: 'https://www.youtube.com/watch?v=qw--VYLpxG4',
+  },
+  {
+    id: 8,
+    title: 'NestJS Production Backend',
+    area: 'Core Backend Stack',
+    summary: 'تجميع الأساسيات داخل Backend منظم وقابل للتوسع باستخدام NestJS وPrisma وPostgreSQL.',
+    scope: ['Modules / controllers / services', 'Dependency injection', 'DTOs & ValidationPipe', 'Prisma schema & migrations', 'JWT & refresh tokens', 'RBAC & guards', 'CORS & rate limiting', 'Swagger / OpenAPI', 'Users / products / cart / orders / payments'],
+    evidence: 'E-commerce backend production-style مع توثيق API وقدرة على شرح كل طبقة وقرار معماري.',
+    course: 'https://www.youtube.com/watch?v=RjMvgpeoSuw',
+  },
+  {
+    id: 9,
+    title: 'Redis & Caching',
+    area: 'Performance',
+    summary: 'إضافة caching وبيانات قصيرة العمر بعد فهم قاعدة البيانات الدائمة ومتى تكون القراءة المتكررة مكلفة.',
+    scope: ['Strings / hashes / lists / sets', 'TTL', 'Caching patterns', 'Cache invalidation', 'Transactions basics', 'Pub/Sub basics'],
+    evidence: 'إضافة Redis cache فعلي إلى endpoint كثيف القراءة مع توضيح invalidation strategy.',
+    course: 'https://www.youtube.com/watch?v=XCsS_NVAa1g',
+  },
+  {
+    id: 10,
+    title: 'Queues & Background Processing',
+    area: 'Asynchronous Workloads',
+    summary: 'فصل الأعمال الثقيلة أو غير الفورية عن دورة HTTP request باستخدام queues وworkers.',
+    scope: ['BullMQ', 'Redis-backed queues', 'Producers & workers', 'Retries', 'Delayed jobs', 'Failure handling', 'Idempotency basics', 'Events'],
+    evidence: 'Background job حقيقي مثل email/notification أو file processing مع retry strategy.',
+    course: 'https://www.youtube.com/watch?v=BkaNpM7CqWM',
+  },
+  {
+    id: 11,
+    title: 'WebSockets & Real-Time',
+    area: 'Realtime Systems',
+    summary: 'فهم الاتصال المستمر وتحديثات الزمن الحقيقي خارج نمط request/response التقليدي.',
+    scope: ['NestJS gateways', 'Socket.IO', 'Connection lifecycle', 'Rooms', 'Realtime notifications', 'Socket authentication'],
+    evidence: 'Chat أو live notifications مرتبطة بمستخدمين وصلاحيات واضحة.',
+    course: 'https://www.youtube.com/watch?v=atbdpX4CViM',
+  },
+  {
+    id: 12,
+    title: 'Backend Testing',
+    area: 'Quality Engineering',
+    summary: 'بناء ثقة في التغييرات عبر طبقات اختبار تغطي business logic وintegration وHTTP behavior.',
+    scope: ['Jest', 'Unit tests', 'Mocks', 'Integration tests', 'E2E with Supertest', 'Test database strategy', 'Coverage basics'],
+    evidence: 'اختبارات Auth + Service + E2E لمشروع NestJS مع سيناريوهات نجاح وفشل.',
+    course: 'https://www.youtube.com/watch?v=GSoGVlG1MTQ&list=PLIGDNOJWiL1-8hpXEDlD1UrphjmZ9aMT1',
+  },
+  {
+    id: 13,
+    title: 'Linux Fundamentals',
+    area: 'Server Environment',
+    summary: 'امتلاك الحد الأدنى العملي لإدارة تطبيق Backend داخل بيئة Linux وفهم الملفات والعمليات والشبكة والسجلات.',
+    scope: ['Filesystem', 'Permissions basics', 'Processes', 'Packages', 'Environment variables', 'Networking basics', 'Logs & common shell commands'],
+    evidence: 'تشغيل مشروع Node من terminal وإدارة process/env/logs بدون واجهة رسومية.',
+    course: 'https://www.youtube.com/watch?v=ROjZy1WbCIA',
+  },
+  {
+    id: 14,
+    title: 'Docker & Containerization',
+    area: 'Runtime Packaging',
+    summary: 'توحيد بيئة التشغيل بحيث يعمل النظام بنفس الطريقة محليًا وفي CI وعلى السيرفر.',
+    scope: ['Images & containers', 'Dockerfile', 'Volumes', 'Networks', 'Docker Compose', 'Registry basics', 'Production image practices'],
+    evidence: 'تشغيل NestJS + PostgreSQL + Redis معًا باستخدام Docker Compose.',
+    course: 'https://www.youtube.com/watch?v=3c-iBn73dDE',
+  },
+  {
+    id: 15,
+    title: 'CI/CD with GitHub Actions',
+    area: 'Delivery Automation',
+    summary: 'تحويل الاختبار والبناء والنشر إلى pipeline قابلة للتكرار بدل تنفيذها يدويًا.',
+    scope: ['Workflows / jobs / steps', 'Triggers', 'Secrets', 'Install → test → build', 'Docker image pipeline', 'Deployment gates'],
+    evidence: 'Pipeline على main تشغل tests وbuild تلقائيًا وتمنع نشر build فاشل.',
+    course: 'https://www.youtube.com/watch?v=R8_veQiYBjI',
+  },
+  {
+    id: 16,
+    title: 'AWS Cloud Deployment',
+    area: 'Cloud Infrastructure',
+    summary: 'نشر Backend وقاعدة البيانات ومتابعة الصحة والسجلات داخل بيئة Cloud فعلية.',
+    scope: ['IAM', 'EC2', 'S3', 'RDS', 'Networking basics', 'Security Groups', 'CloudWatch', 'Deployment', 'Logging & observability'],
+    evidence: 'Backend منشور على AWS مع database وخطوات deployment موثقة وhealth/log monitoring.',
+    course: 'https://www.youtube.com/watch?v=YC9ZxTotkxk',
+    course2: 'https://explore.skillbuilder.aws/learn/courses/134/aws-cloud-practitioner-essentials',
+  },
+  {
+    id: 17,
+    title: 'SOLID & Refactoring',
+    area: 'Code Design',
+    summary: 'تحسين تصميم الكود بعد امتلاك مشروع كبير بما يكفي لإظهار مشاكل coupling والمسؤوليات المتداخلة.',
+    scope: ['SRP', 'OCP', 'LSP', 'ISP', 'DIP', 'Code smells', 'Refactoring decisions'],
+    evidence: 'Refactor لخدمة قديمة مع مقارنة before/after وشرح سبب كل تغيير.',
+    course: 'https://www.youtube.com/watch?v=eHjNjyvZBto',
+  },
+  {
+    id: 18,
+    title: 'Clean Architecture',
+    area: 'Application Architecture',
+    summary: 'فصل business rules عن framework/database وبناء حدود واضحة بين طبقات النظام.',
+    scope: ['Domain layer', 'Application / use cases', 'Infrastructure', 'Dependency direction', 'Repository abstraction', 'Framework as implementation detail'],
+    evidence: 'إعادة تصميم Module واحد من NestJS بأسلوب Clean Architecture مع diagram للdependencies.',
+    course: 'https://www.youtube.com/watch?v=UMUJ2-w9LIM',
+  },
+  {
+    id: 19,
+    title: 'System Design — Applied Pass',
+    area: 'Architecture & Scale',
+    summary: 'إعادة System Design بعد التطبيق العملي حتى تصبح قرارات cache وqueue وscaling مبنية على خبرة تنفيذية.',
+    scope: ['Caching strategy', 'Queues', 'Database scaling', 'SPOF', 'Consistency trade-offs', 'Rate limiting', 'Observability', 'Designing for failure'],
+    evidence: 'System Design كامل لنظام Booking أو Notifications مع diagram وقرارات وتبريرات مكتوبة.',
+    course: 'https://www.youtube.com/watch?v=C842vFY5kRo',
+  },
+  {
+    id: 20,
+    title: 'Capstone Backend Project',
+    area: 'Proof of Skill',
+    summary: 'بناء Backend مستقل من الصفر بدون اتباع فيديو خطوة بخطوة، لإثبات القدرة على اتخاذ القرارات والتنفيذ والنشر.',
+    scope: ['Requirements & scope', 'ERD & API contract', 'NestJS + Prisma + PostgreSQL', 'JWT/RBAC', 'Redis + BullMQ', 'WebSockets', 'Jest + E2E', 'Docker Compose', 'GitHub Actions', 'AWS deployment', 'Logging & observability', 'Technical documentation'],
+    evidence: 'Backend كامل مستقل: Booking / Hospital / Automation Platform مع README وarchitecture diagram ونشر فعلي.',
+  },
+];
+
+export const sprintDays: SprintDay[] = [
+  {day:1,title:'System Design Overview + JavaScript Intro',phase:'01–02',sessions:['System Design: request flow, databases, scaling & load balancing','JavaScript: variables, types & operators','Conditions, loops & functions','Request-flow diagram + JavaScript exercises']},
+  {day:2,title:'JavaScript Core',phase:'02',sessions:['Arrays & methods','Objects & destructuring','Functions, scope & closures','Exercises without returning to the video']},
+  {day:3,title:'JavaScript Async + Mini Project',phase:'02',sessions:['Promises & async/await','Error handling + modules + npm','Mini project implementation','Rebuild the project from memory']},
+  {day:4,title:'TypeScript Core',phase:'03',sessions:['Types & inference','Interfaces & type aliases','Unions & narrowing','Convert the JavaScript project to TypeScript']},
+  {day:5,title:'TypeScript Advanced + Git',phase:'03–04',sessions:['Generics & utility types','Typed async code','Git commits & history','Remote repository + README']},
+  {day:6,title:'Git Workflow + Node.js Intro',phase:'04–05',sessions:['Branches, merge & conflicts','Git workflow challenge','Node runtime, modules & npm','Filesystem, env & HTTP basics']},
+  {day:7,title:'Node.js Internals',phase:'05',sessions:['Event loop & async model','Events & streams basics','Manual HTTP server','Node exercises from scratch']},
+  {day:8,title:'Express + REST APIs',phase:'05',sessions:['Express routes & middleware','Params, query, body & status codes','Validation + error middleware','REST API + Postman collection']},
+  {day:9,title:'Project — Task Manager API',phase:'06',sessions:['Data model + endpoints','CRUD implementation','Validation + error handling','README + tests + push']},
+  {day:10,title:'Project — Store API',phase:'06',sessions:['Products API','Filtering & sorting','Pagination & search','Refactor + Postman + push']},
+  {day:11,title:'Project — JWT Authentication',phase:'06',sessions:['Register + password hashing','Login + JWT','Protected routes','Rebuild the auth flow']},
+  {day:12,title:'Project — Jobs API',phase:'06',sessions:['Auth + ownership rules','Jobs CRUD','Error handling cleanup','Node/Express full review']},
+  {day:13,title:'SQL Foundations',phase:'07',sessions:['Tables + constraints','CRUD SQL','WHERE / ORDER / LIMIT','30 manual SQL queries']},
+  {day:14,title:'SQL Relationships',phase:'07',sessions:['Primary/foreign keys + relationships','JOINs','GROUP BY + HAVING','Booking-system ERD']},
+  {day:15,title:'PostgreSQL Deeper',phase:'07',sessions:['Indexes','Transactions + ACID','Normalization','Database mini project + query review']},
+  {day:16,title:'NestJS Core',phase:'08',sessions:['Modules + controllers','Services + dependency injection','DTOs + ValidationPipe','First CRUD module']},
+  {day:17,title:'NestJS + Prisma',phase:'08',sessions:['Prisma schema + migrations','Relations + queries','Config + application structure','Build a complete resource module']},
+  {day:18,title:'Authentication, RBAC & Security',phase:'08',sessions:['Register/login + hashing','JWT + refresh token flow','Guards + roles + permissions','CORS, rate limiting + Swagger']},
+  {day:19,title:'Main Backend Project I',phase:'08',sessions:['Users + auth architecture','Products + categories','Validation + errors','API documentation + review']},
+  {day:20,title:'Main Backend Project II',phase:'08',sessions:['Cart + orders','Transactions + business rules','Payments flow','Production cleanup + repository push']},
+  {day:21,title:'Redis & Caching',phase:'09',sessions:['Redis data types + TTL','Caching patterns','Cache invalidation','Integrate Redis into NestJS']},
+  {day:22,title:'Queues & Background Jobs',phase:'10',sessions:['BullMQ architecture','Producer + worker','Retries + delayed jobs','Email/notification background job']},
+  {day:23,title:'WebSockets & Real-Time',phase:'11',sessions:['NestJS gateway','Socket.IO lifecycle','Rooms + socket auth','Realtime chat/notifications']},
+  {day:24,title:'Backend Testing',phase:'12',sessions:['Jest unit tests','Mocks + service tests','Integration tests','E2E with Supertest']},
+  {day:25,title:'Linux Fundamentals',phase:'13',sessions:['Filesystem + permissions','Processes + packages','Networking + env','Run and inspect the backend from terminal']},
+  {day:26,title:'Docker & Docker Compose',phase:'14',sessions:['Images + containers','Dockerfile','Volumes + networks','NestJS + PostgreSQL + Redis Compose']},
+  {day:27,title:'GitHub Actions & CI/CD',phase:'15',sessions:['Workflow structure','Secrets + triggers','Install → test → build pipeline','Deployment gate + verification']},
+  {day:28,title:'AWS Deployment',phase:'16',sessions:['IAM + EC2','RDS + S3','Networking + Security Groups','Deploy + CloudWatch + health checks']},
+  {day:29,title:'SOLID + Clean Architecture',phase:'17–18',sessions:['SOLID principles review','Refactor an existing service','Clean Architecture layers','Refactor one NestJS module + diagram']},
+  {day:30,title:'System Design + Capstone Definition',phase:'19–20',sessions:['System Design second pass','Design a production system','Capstone scope + ERD + API contract','Create repo, milestones & implementation plan']},
+];
+
+export const sessionTimes = ['08:00–10:30', '11:00–13:30', '14:30–17:00', '17:30–20:00'];
+export const breaks = ['10:30–11:00 · Break', '13:30–14:30 · Lunch / Prayer', '17:00–17:30 · Break'];
