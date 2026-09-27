@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import './theme.css';
 
 export const metadata: Metadata = {
   title: 'Backend Engineering Roadmap — Ghala Alameer',
