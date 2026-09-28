@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Time12hClient from './Time12hClient';
 import './theme.css';
 
 export const metadata: Metadata = {
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function BackendSprintLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+  return (
+    <>
+      <Time12hClient />
+      {children}
+    </>
+  );
 }
