@@ -1,6 +1,0 @@
-Put your profile image in this folder and name it exactly:
-
-profile.jpg
-
-Final path:
-/public/images/profile.jpg
