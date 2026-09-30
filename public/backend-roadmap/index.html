@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0d12" />
+  <meta name="description" content="خطة Backend Engineering عملية من سبتمبر إلى نوفمبر 2026 مع تتبع التقدم والتقديم على الوظائف في مكة وجدة." />
+  <title>Backend Launchpad — مكة + جدة</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<div class="app" id="top">
+  <header class="hero">
+    <div class="kicker">BACKEND LAUNCHPAD · MAKKAH + JEDDAH · 2026</div>
+    <h1>من Fresh Grad إلى<br><span>Backend Engineer</span></h1>
+    <p>خطة تنفيذ وتوظيف من نهاية سبتمبر إلى نهاية نوفمبر. ما تنتظرين تكملي الرودماب عشان تقدمين؛ كل أسبوع لازم يطلع منه أثر قابل للإثبات: مشروع، GitHub، تقديم، مقابلة، أو مهارة إنتاجية.</p>
+    <div class="identity">
+      <span class="chip">Software Engineer — <b>Backend Track</b></span>
+      <span class="chip">TypeScript · Node.js · NestJS · PostgreSQL</span>
+      <span class="chip">70% جدة · 30% مكة</span>
+      <span class="chip">التقديم يبدأ الآن</span>
+    </div>
+    <div class="topActions">
+      <button class="btn primary" id="shareBtn">نسخ رابط الموقع</button>
+      <button class="btn" id="exportBtn">تصدير تقدمي</button>
+      <label class="btn" style="cursor:pointer">استيراد نسخة<input id="importInput" type="file" accept="application/json" hidden></label>
+      <button class="btn danger" id="resetBtn">إعادة ضبط</button>
+    </div>
+  </header>
+
+  <section class="grid summary" aria-label="ملخص التقدم">
+    <div class="card metric good"><span class="label">ROADMAP</span><strong id="overallMetric">0%</strong><small id="doneMetric">0 مهمة مكتملة</small></div>
+    <div class="card metric"><span class="label">APPLICATIONS</span><strong id="applicationsMetric">0</strong><small>فرص تم التقديم عليها</small></div>
+    <div class="card metric warn"><span class="label">INTERVIEWS</span><strong id="interviewsMetric">0</strong><small>مقابلات وصلتِ لها</small></div>
+    <div class="card metric"><span class="label">TARGET</span><strong>30 Nov</strong><small>Capstone + مقابلات + GitHub قوي</small></div>
+  </section>
+
+  <section class="card progressWrap">
+    <div class="ring" id="ring"><b id="pct">0%</b></div>
+    <div class="progressText"><strong id="nextTitle">ابدئي بأول مهمة اليوم</strong><p id="nextDesc">كل تشييك ينحفظ تلقائيًا على نفس الجهاز.</p><div class="bar"><i id="bar"></i></div></div>
+  </section>
+
+  <section class="section" id="roadmap">
+    <div class="sectionHead"><div><div class="sectionEyebrow">EXECUTION ROADMAP</div><h2>الشهرين الجاية — اللعبة كلها هنا</h2></div><div><button class="btn" id="addPhaseBtn">+ أضيفي مرحلة</button></div></div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section class="section" id="jobs">
+    <div class="sectionHead"><div><div class="sectionEyebrow">JOB PIPELINE</div><h2>الشركات والفرص المستهدفة</h2></div><p>آخر تحقق للمعلومات الأساسية: 30 سبتمبر 2026</p></div>
+    <div class="grid jobs" id="jobsGrid"></div>
+    <div style="margin-top:10px"><button class="btn" id="addJobBtn">+ أضيفي فرصة مخصصة</button></div>
+  </section>
+
+  <section class="section grid two" id="strategy">
+    <article class="card contentCard">
+      <div class="sectionEyebrow">THE GAP STORY</div><h3>إذا سألوك: وش سويتي بعد التخرج؟</h3>
+      <p>لا نسميها وظيفة ولا نخترع خبرة. نخلي الفترة واضحة ومثبتة بمشاريع وتواريخ GitHub وتطوير مهني.</p>
+      <div class="quote">تخرجت وبعد التخرج ركزت على بناء تخصصي في Backend Engineering بشكل منظم على TypeScript وNode.js وNestJS وPostgreSQL مع مشاريع عملية ونشر فعلي وبالتوازي كنت أستهدف فرص الخريجين والتدريب المناسبة</div>
+      <div class="editHint">الفكرة: نهاية نوفمبر لازم القصة يكون وراءها أدلة حقيقية مو مجرد كلام.</div>
+    </article>
+    <article class="card contentCard">
+      <div class="sectionEyebrow">DAILY SYSTEM</div><h3>روتين يومي ما يضيعك بالكورسات</h3>
+      <div class="routine">
+        <div class="routineRow"><b>08:00–11:00</b><span>تعلم مركز + كتابة الكود بنفسك</span></div>
+        <div class="routineRow"><b>11:30–14:00</b><span>مشروع فعلي / API / Database</span></div>
+        <div class="routineRow"><b>16:00–17:00</b><span>تقديم على فرص جديدة — جدة أولًا ثم مكة</span></div>
+        <div class="routineRow"><b>17:00–18:00</b><span>LinkedIn + Recruiters + متابعة الطلبات</span></div>
+        <div class="routineRow"><b>20:00–21:00</b><span>مراجعة / Interview prep / تحديث GitHub</span></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section" id="ladder">
+    <div class="sectionHead"><div><div class="sectionEyebrow">LONG-TERM LADDER</div><h2>السلم بعد أول فرصة</h2></div></div>
+    <div class="ladder">
+      <div class="step"><i>أنت هنا</i><b>Trainee / Junior</b><span>أساس قوي + Production exposure</span></div>
+      <div class="step"><i>1–2</i><b>Backend Engineer</b><span>APIs · DB · Testing · Deployments</span></div>
+      <div class="step"><i>2–4</i><b>Software Engineer II</b><span>Ownership + system components</span></div>
+      <div class="step"><i>4–6</i><b>Senior Backend</b><span>Architecture + mentoring + reliability</span></div>
+      <div class="step"><i>IC path</i><b>Staff → Principal</b><span>تقني جدًا وتأثير على أنظمة متعددة</span></div>
+      <div class="step"><i>Management</i><b>EM → Director</b><span>فرق، تنفيذ، استراتيجية هندسية</span></div>
+      <div class="step"><i>Executive</i><b>VP / CTO</b><span>قيادة التقنية على مستوى الشركة</span></div>
+    </div>
+  </section>
+
+  <section class="section card contentCard" id="sources">
+    <div class="sectionEyebrow">VERIFIED LINKS</div><h3>روابط التقديم والمتابعة</h3>
+    <p>الوظائف تتغير بسرعة، لذلك الروابط هنا تقودك للصفحة الرسمية أو الإعلان المباشر بدل الاعتماد على وصف ثابت.</p>
+    <div class="sources">
+      <a class="source" target="_blank" rel="noopener" href="https://futureskills.mcit.gov.sa/ar/seekers-faq">مهارات المستقبل</a>
+      <a class="source" target="_blank" rel="noopener" href="https://www.hrdf.org.sa/products-and-services/programs/individuals/training/graduate-development/">تمهير — هدف</a>
+      <a class="source" target="_blank" rel="noopener" href="https://careers.flyadeal.com/?langcode=en">flyadeal Careers</a>
+      <a class="source" target="_blank" rel="noopener" href="https://sa.linkedin.com/jobs/view/javascript-developer-at-medical-data-ltd-4469433716">Medical Data — JavaScript Developer</a>
+      <a class="source" target="_blank" rel="noopener" href="https://apply.workable.com/lucidya/j/8120FF802B/">Lucidya — Frontend Software Engineer</a>
+      <a class="source" target="_blank" rel="noopener" href="https://sa.linkedin.com/jobs/view/junior-technology-solutions-project-coordinator-at-koraspond-360%C2%B0-marketing-and-technology-company-4467331779">Koraspond — Junior Tech Solutions</a>
+      <a class="source" target="_blank" rel="noopener" href="https://salla-carrer.webflow.io/">Salla Careers</a>
+      <a class="source" target="_blank" rel="noopener" href="https://careers.bupa.com.sa/en/company/bupa-arabia-1975070/">Bupa Careers</a>
+    </div>
+    <div class="mutedNote">مهم: بعض الإعلانات الحالية قد تُغلق في أي وقت. الموقع مصمم كخطة تنفيذ وتتبع، وليس بديلًا عن فحص حالة الإعلان قبل التقديم.</div>
+  </section>
+
+  <div class="footer">Backend Launchpad · كل البيانات الشخصية (التشييك والملاحظات وحالات التقديم) تحفظ محليًا في متصفحك فقط.</div>
+</div>
+
+<nav class="bottomNav" aria-label="تنقل سريع">
+  <button data-go="top">الرئيسية</button><button data-go="roadmap">الخطة</button><button data-go="jobs">التقديم</button><button data-go="strategy">الاستراتيجية</button>
+</nav>
+<div class="toast" id="toast"></div>
+
+<script src="./app.js"></script>
+</body>
+</html>
